@@ -1,0 +1,200 @@
+/* ===== CAREERS PAGE ===== */
+
+/* Benefits */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.benefit-card {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px 16px;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(45, 106, 79, 0.3);
+  background-color: var(--light-green-bg);
+}
+
+.benefit-icon {
+  font-size: 1.5rem;
+  color: var(--primary-green);
+  margin-bottom: 12px;
+  transition: var(--transition-bounce);
+}
+
+.benefit-card:hover .benefit-icon {
+  transform: scale(1.15) rotate(6deg);
+}
+
+.benefit-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--navy-text);
+  margin-bottom: 4px;
+}
+
+.benefit-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Open Positions Section */
+#openPositions {
+  margin-top: 70px;      /* section ko niche karne ke liye: badhao = aur niche, ghatao = upar */
+  scroll-margin-top: 90px; /* "Explore Opportunities" click par header ke niche sahi se ruke */
+}
+
+.jobs-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 32px;
+  margin-bottom: 60px;
+}
+
+/* grid children overflow na karein */
+.jobs-layout > div {
+  min-width: 0;
+}
+
+.jobs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.job-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.job-card:hover {
+  border-color: var(--primary-green);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.job-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.job-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--light-green-bg);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  transition: var(--transition-bounce);
+}
+
+.job-card:hover .job-icon {
+  background-color: var(--primary-green);
+  color: #FFFFFF;
+  transform: scale(1.1) rotate(6deg);
+}
+
+.job-title {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--navy-text);
+  margin-bottom: 4px;
+  transition: var(--transition-fast);
+}
+
+.job-card:hover .job-title {
+  color: var(--primary-green);
+}
+
+.job-location {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.job-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.job-tag {
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background-color: var(--bg-light);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--navy-text);
+  border: 1px solid var(--border-color);
+}
+
+/* Why Join Ecometrix */
+.why-emc-box {
+  background: linear-gradient(135deg, var(--bg-light) 0%, #FFFFFF 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-md);
+}
+
+.why-emc-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-text);
+  margin-bottom: 16px;
+}
+
+.why-emc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.why-emc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.why-emc-icon {
+  color: var(--primary-green);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+  .jobs-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .job-card { flex-direction: column; align-items: flex-start; }
+  .jobs-layout .search-box { width: 100%; }
+}

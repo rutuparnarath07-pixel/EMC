@@ -1,0 +1,21 @@
+<!-- SVG Clip Paths and Sector Outlines -->
+<!-- Sector 1: Top-Left (Buildings) -->
+<clipPath id="clip-sec-1">
+  <path d="M 42.2,130.0 A 240,240 0 0,1 299.9,15.2 L 273.7,138.5 A 114,114 0 0,0 151.3,193.0 Z" />
+</clipPath>
+<!-- Sector 2: Top-Right (Renewable Energy) -->
+<clipPath id="clip-sec-2">
+  <path d="M 316.2,19.3 A 240,240 0 0,1 489.9,241.6 L 363.9,246.0 A 114,114 0 0,0 281.4,140.4 Z" />
+</clipPath>
+<!-- Sector 3: Mid-Right (Healthcare) -->
+<clipPath id="clip-sec-3">
+  <path d="M 489.9,258.4 A 240,240 0 0,1 316.2,480.7 L 281.4,359.6 A 114,114 0 0,0 363.9,254.0 Z" />
+</clipPath>
+<!-- Sector 4: Bottom-Right (Water Resource) -->
+<clipPath id="clip-sec-4">
+  <path d="M 299.9,484.8 A 240,240 0 0,1 42.2,370.0 L 151.3,307.0 A 114,114 0 0,0 273.7,361.5 Z" />
+</clipPath>
+<!-- Sector 5: Bottom-Left (Climate Adaptation) -->
+<clipPath id="clip-sec-5">
+  <path d="M 34.3,355.2 A 240,240 0 0,1 34.3,144.8 L 147.5,200.0 A 114,114 0 0,0 147.5,300.0 Z" />
+</clipPath>

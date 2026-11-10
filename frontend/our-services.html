@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services | Ecometrix Consultants Pvt. Ltd.</title>
+  <meta name="description" content="Our Services at Ecometrix Consultants (EMC): Plan & Assess, Survey & Investigate, Design & Engineer, Manage & Deliver, and Digital & Spatial services across the infrastructure lifecycle.">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/our-services.css">
+  <script src="js/i18n.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.ecometrix.co.in/index.html"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Our Services",
+      "item": "https://www.ecometrix.co.in/our-services.html"
+    }]
+  }
+  </script>
+  <script>document.documentElement.classList.add("js-reveal");</script>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo"><img src="assets/logo/emclogo.png" alt="EMC Logo"></a>
+      
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="our-services.html" class="nav-link active">Our Services</a></li>
+        
+        <li class="nav-item-has-mega">
+          <a href="services.html" class="nav-link">Delivery Experience ▾</a>
+          <div class="mega-menu-dropdown">
+            <div>
+              <div style="font-size: 0.75rem; font-weight: 800; color: var(--primary-green); text-transform: uppercase; margin-bottom: 12px;">EMC 8 Core Sectors</div>
+              <div class="mega-menu-grid">
+                <a href="services.html" class="mega-menu-item"><div class="mega-menu-icon">💧</div><div><div class="mega-menu-title">Drinking water Supply</div><div class="mega-menu-desc">24×7 Drink-from-Tap & WTPs</div></div></a>
+                <a href="services.html" class="mega-menu-item"><div class="mega-menu-icon">♻️</div><div><div class="mega-menu-title">Used Water Mgmt.</div><div class="mega-menu-desc">STP & Sewerage Networks</div></div></a>
+                <a href="services.html" class="mega-menu-item"><div class="mega-menu-icon">🌧️</div><div><div class="mega-menu-title">Stormwater & Flood</div><div class="mega-menu-desc">Master Drainage & Mitigation</div></div></a>
+                <a href="services.html" class="mega-menu-item"><div class="mega-menu-icon">🗺️</div><div><div class="mega-menu-title">GIS & Spatial Intel</div><div class="mega-menu-desc">Geospatial Utility Mapping</div></div></a>
+                <a href="services.html" class="mega-menu-item"><div class="mega-menu-icon">🏙️</div><div><div class="mega-menu-title">Urban Planning</div><div class="mega-menu-desc">Strategic City Master Plans</div></div></a>
+                <a href="services.html" class="mega-menu-item"><div class="mega-menu-icon">🏛️</div><div><div class="mega-menu-title">Urban & Civic Infra</div><div class="mega-menu-desc">Waterfront & Public Assets</div></div></a>
+                <a href="services.html" class="mega-menu-item"><div class="mega-menu-icon">🛣️</div><div><div class="mega-menu-title">Transportation</div><div class="mega-menu-desc">Highways & Elevated Corridors</div></div></a>
+                <a href="services.html" class="mega-menu-item"><div class="mega-menu-icon">💻</div><div><div class="mega-menu-title">Digital Solutions</div><div class="mega-menu-desc">Custom PPMS & IoT Dashboards</div></div></a>
+              </div>
+            </div>
+            <div class="mega-menu-sidebar">
+              <div>
+                <div class="mega-sidebar-title">Advisory & Consultancy</div>
+                <div class="mega-sidebar-text">End-to-end solutions from Feasibility Studies to Project Management Consultancy (PMC).</div>
+              </div>
+              <a href="contact.html" class="btn btn-primary btn-sm">Consult Our Team →</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="insights.html" class="nav-link">Insights</a></li> -->
+        <li class="nav-item-has-dropdown">
+          <a href="advisory-board.html" class="nav-link">Our Peoples ▾</a>
+          <ul class="nav-dropdown">
+            <li><a href="advisory-board.html" class="nav-dropdown-link">Advisory Board</a></li>
+            <li><a href="team-emc.html" class="nav-dropdown-link">Team EMC</a></li>
+          </ul>
+        </li>
+        <li><a href="careers.html" class="nav-link">Careers</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="#" class="nav-link emcone-nav-btn" onclick="openEmconeModal(event)">EMCOne</a></li>
+      </ul>
+
+      <div class="header-actions">
+        <button class="nav-search-btn" title="Global Search (Ctrl + K)" aria-label="Search" onclick="window.openSearchModal && window.openSearchModal()">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </button>
+
+        <button type="button" class="header-pref-toggle" id="prefModalBtn" title="Site Preferences & Accessibility Controls (Theme, Language, A11y)">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg> <span class="current-lang-code">EN</span>
+        </button>
+
+        <a href="contact.html" class="btn btn-primary">Let's Connect →</a>
+
+        <button class="mobile-toggle" aria-label="Toggle mobile menu">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-drawer">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="about.html" class="mobile-nav-link">About Us</a>
+    <a href="our-services.html" class="mobile-nav-link active">Our Services</a>
+    <a href="services.html" class="mobile-nav-link">Delivery Experience</a>
+    <!-- <a href="projects.html" class="mobile-nav-link">Projects</a>
+    <a href="insights.html" class="mobile-nav-link">Insights</a> -->
+    <div class="mobile-nav-group">
+      <div class="mobile-nav-group-title">Our Peoples</div>
+      <a href="advisory-board.html" class="mobile-nav-link mobile-nav-sublink">Advisory Board</a>
+      <a href="team-emc.html" class="mobile-nav-link mobile-nav-sublink">Team EMC</a>
+    </div>
+    <a href="careers.html" class="mobile-nav-link">Careers</a>
+    <a href="contact.html" class="mobile-nav-link">Contact</a>
+    <a href="#" class="mobile-nav-link emcone-nav-btn" onclick="openEmconeModal(event)">EMCOne Portal</a>
+    
+    <div style="display:flex; align-items:center; justify-content:space-between; margin-top:16px; padding:12px; background:var(--light-green-bg); border-radius:var(--radius-sm);">
+      <span style="font-size:0.8125rem; font-weight:700; color:var(--navy-text);">Quick Tools:</span>
+      <div style="display:flex; gap:8px;">
+        <button type="button" class="header-action-btn header-pref-toggle" title="Site Preferences & Accessibility">⚙️</button>
+        <button type="button" class="header-action-btn" data-a11y-action="contrast" title="High Contrast">♿</button>
+        <button type="button" class="header-action-btn" data-a11y-action="large" title="Increase Font Size">A+</button>
+      </div>
+    </div>
+
+    <a href="contact.html" class="btn btn-primary" style="margin-top:12px; text-align:center;">Let's Connect →</a>
+  </div>
+
+  <section id="main-content" tabindex="-1" class="os-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Our Services</span>
+      </div>
+      <div class="os-hero-grid">
+        <div>
+          <h1 class="os-hero-title">Our <span>Services</span></h1>
+          <div class="os-hero-subhead">Services Offered</div>
+          <p class="os-hero-sub">End-to-end infrastructure development, engineering &amp; project management solutions spanning water supply, used water management, stormwater drainage, urban infrastructure planning, GIS &amp; IT, transportation and digital solutions.</p>
+        </div>
+        <div style="text-align:right;">
+          <div class="handwritten-quote" style="font-size:2.5rem;">Global Knowledge with Local Realities</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="os-services">
+    <div class="container">
+      <article class="os-block os-reveal" id="plan-assess">
+        <div class="os-media"><img src="assets/services/plan-assess.jpg" alt="Planner reviewing a GIS-based master plan on a laptop" loading="lazy"></div>
+        <div class="os-content">
+          <h2 class="os-title">Plan & Assess</h2>
+          <ul class="os-chips">
+            <li>Master Planning</li>
+            <li>Feasibility Study</li>
+            <li>Pre-Investment Engineering</li>
+            <li>Urban & Regional Planning</li>
+            <li>Land Use Planning</li>
+            <li>Infrastructure Planning</li>
+            <li>Hydraulic & Hydrological Analysis</li>
+            <li>Flood Analysis</li>
+            <li>Traffic Impact Assessment</li>
+            <li>Wastewater Reuse Planning</li>
+          </ul>
+        </div>
+      </article>
+      <article class="os-block os-reveal reverse" id="survey-investigate">
+        <div class="os-media"><img src="assets/services/survey-investigate.jpg" alt="Surveyor with GNSS rover collecting field data beside an urban road" loading="lazy"></div>
+        <div class="os-content">
+          <h2 class="os-title">Survey & Investigate</h2>
+          <ul class="os-chips">
+            <li>Field Surveys</li>
+            <li>Condition Assessment</li>
+            <li>Utility Assessment</li>
+            <li>Household & Consumer Surveys</li>
+            <li>Environmental & Social Assessment</li>
+            <li>Transportation Survey</li>
+            <li>Land Use Survey</li>
+            <li>Topographic & Cadastral Surveys</li>
+            <li>Drone & LiDAR Surveys</li>
+          </ul>
+        </div>
+      </article>
+      <article class="os-block os-reveal" id="design-engineer">
+        <div class="os-media"><img src="assets/services/design-engineer.jpg" alt="EMC engineers reviewing drawings together at a table" loading="lazy"></div>
+        <div class="os-content">
+          <h2 class="os-title">Design & Engineer</h2>
+          <ul class="os-chips">
+            <li>Detailed Engineering</li>
+            <li>DPR Preparation</li>
+            <li>Hydraulic</li>
+            <li>Hydrological</li>
+            <li>Structural</li>
+            <li>Electromechanical</li>
+            <li>Instrumentation & Automation</li>
+            <li>WTP</li>
+            <li>STP/CETP</li>
+            <li>Pumping Stations</li>
+            <li>Water Supply, Sewer & Drainage Network Modelling</li>
+            <li>Architectural Design</li>
+            <li>Cost Estimation & Quantity Take-offs</li>
+            <li>3D Modelling</li>
+          </ul>
+        </div>
+      </article>
+      <article class="os-block os-reveal reverse" id="manage-deliver">
+        <div class="os-media"><img src="assets/services/manage-deliver.jpg" alt="Site engineers supervising pipeline works in an excavation" loading="lazy"></div>
+        <div class="os-content">
+          <h2 class="os-title">Manage & Deliver</h2>
+          <ul class="os-chips">
+            <li>Tender Process Management</li>
+            <li>EPC Technical Assistance</li>
+            <li>Construction Supervision</li>
+            <li>Quality Assurance</li>
+            <li>Contract Management</li>
+            <li>Project Management Consultancy</li>
+            <li>Environment & Safety Monitoring</li>
+            <li>Risk & Quality Management</li>
+          </ul>
+        </div>
+      </article>
+      <article class="os-block os-reveal" id="digital-spatial">
+        <div class="os-media"><img src="assets/services/digital-spatial.jpg" alt="3D geospatial heat-map of a city with river and lake" loading="lazy"></div>
+        <div class="os-content">
+          <h2 class="os-title">Digital & Spatial</h2>
+          <ul class="os-chips">
+            <li>GIS & Asset Mapping</li>
+            <li>Geospatial Data Management & Analysis</li>
+            <li>Remote Sensing</li>
+            <li>Photogrammetry</li>
+            <li>LiDAR Processing</li>
+            <li>3D Mapping</li>
+            <li>Enterprise & Web GIS</li>
+            <li>Utility Asset Management</li>
+            <li>Data Analytics & Decision Support</li>
+            <li>SCADA</li>
+            <li>Digital Water Management</li>
+            <li>Infrastructure Dashboards</li>
+            <li>MIS</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand footer-brand-card">
+          <div class="footer-card-header">
+            <img src="assets/logo/emclogo.png" alt="EMC Logo" class="footer-card-logo">
+          </div>
+          <div class="footer-card-body">
+            <div class="footer-company-name">Ecometrix Consultants Pvt. Ltd.</div>
+            <ul class="footer-contact-list">
+              <li class="footer-contact-item">
+                <svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>DCB 119, 1st Floor, DLF Cybercity, Patia, Bhubaneswar – 751024, Odisha, India</span>
+              </li>
+              <li class="footer-contact-item">
+                <svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <a href="tel:+916742973849">+91 674 2973849</a>
+              </li>
+              <li class="footer-contact-item">
+                <svg class="footer-contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <a href="mailto:info@ecometrix.co.in">info@ecometrix.co.in</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-nav">
+      <ul class="footer-links">
+        <li><a href="index.html" class="footer-links">Home</a></li>
+        <li><a href="about.html" class="footer-links active">About Us</a></li>
+        <li><a href="our-services.html" class="footer-link">Our Services</a></li>
+        <li><a href="services.html" class="footer-link">Delivery Experience</a></li>
+        <!-- <li><a href="projects.html" class="footer-link">Projects</a></li>
+        <li><a href="insights.html" class="footer-link">Insights</a></li> -->
+        <li class="nav-item-has-dropdown">
+          <a href="advisory-board.html" class="footer-link">Our Peoples ▾</a>
+          <ul class="nav-dropdown">
+            <li><a href="advisory-board.html" class="nav-dropdown-link">Advisory Board</a></li>
+            <li><a href="team-emc.html" class="nav-dropdown-link">Team EMC</a></li>
+          </ul>
+        </li>
+        <li><a href="careers.html" class="footer-link">Careers</a></li>
+        <li><a href="contact.html" class="footer-link">Contact</a></li>
+        <li><a href="#" class="footer-link emcone-nav-btn" onclick="openEmconeModal(event)">EMCOne</a></li>
+      </ul>
+        </div>
+        <div class="footer-slogan">
+          <!-- <div class="handwritten-quote-light">People Places Progress Together</div> -->
+          <div class="footer-newsletter-box">
+            <h5 class="newsletter-title">Subscribe to Insights</h5>
+            <p class="newsletter-desc">Get our latest infrastructure & sustainability updates delivered directly to your inbox.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); handleNewsletterSubmit(this);">
+              <div class="newsletter-input-group">
+                <input type="email" placeholder="Enter your email address..." required class="newsletter-input">
+                <button type="submit" class="newsletter-btn" title="Subscribe">
+                  <span>Subscribe</span>
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </button>
+              </div>
+              <div class="newsletter-feedback" style="display:none;"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2024 Ecometrix Consultants Pvt. Ltd. All rights reserved.</div>
+        <div class="footer-visitor-counter">
+          <span class="visitor-pulse-dot"></span>
+          <span class="visitor-counter-text">Live Visitors:</span>
+          <span class="visitor-counter-number" id="visitorCounterDisplay">57,896</span>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <span>|</span>
+          <a href="terms.html">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="emc-pref-overlay" id="emcPrefOverlay">
+    <div class="emc-pref-modal">
+      <div class="emc-pref-header">
+        <div class="emc-pref-title">
+          <span>⚙️</span> <span>Site Preferences & Accessibility</span>
+        </div>
+        <button type="button" class="emc-pref-close" id="closePrefBtn" title="Close Panel">&times;</button>
+      </div>
+
+      <div class="emc-pref-section">
+        <div class="emc-pref-section-title">🌐 Language / भाषा / ଭାଷା</div>
+        <div class="emc-pref-grid">
+          <button type="button" class="lang-opt-btn active" data-lang="en">
+            <span class="flag">🇬🇧</span>
+            <span>English</span>
+          </button>
+          <button type="button" class="lang-opt-btn" data-lang="hi">
+            <span class="flag">🇮🇳</span>
+            <span>हिन्दी</span>
+          </button>
+          <button type="button" class="lang-opt-btn" data-lang="od">
+            <span class="flag">🇮🇳</span>
+            <span>ଓଡ଼ିଆ</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="emc-pref-section">
+        <div class="emc-pref-section-title">🌓 Theme Mode</div>
+        <div class="theme-opt-grid">
+          <button type="button" class="theme-opt-btn theme-toggle-btn" data-theme-val="light">
+            <span>☀️</span> <span>Light Mode</span>
+          </button>
+          <button type="button" class="theme-opt-btn theme-toggle-btn" data-theme-val="dark">
+            <span>🌙</span> <span>Dark Mode</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="emc-pref-section">
+        <div class="emc-pref-section-title">♿ Accessibility Controls</div>
+        <div class="font-size-grid" style="margin-bottom:10px;">
+          <button type="button" class="font-size-btn" data-a11y-action="small">A- (14px)</button>
+          <button type="button" class="font-size-btn" data-a11y-action="medium">A (16px)</button>
+          <button type="button" class="font-size-btn" data-a11y-action="large">A+ (18px)</button>
+          <button type="button" class="font-size-btn" data-a11y-action="xlarge">A++ (20px)</button>
+        </div>
+        <button type="button" class="high-contrast-toggle-btn" data-a11y-action="contrast">
+          <span>👁️</span> <span>Toggle High Contrast Mode (WCAG AAA)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/navigation.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/search.js"></script>
+    <script src="js/cookie-consent.js"></script>
+  <script src="js/chatbot.js"></script>
+
+  <script>
+  (function () {
+    var items = document.querySelectorAll('.os-reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      items.forEach(function (el) { io.observe(el); });
+    } else { items.forEach(function (el) { el.classList.add('in'); }); }
+  })();
+  </script>
+</body>
+</html>

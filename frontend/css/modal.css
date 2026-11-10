@@ -1,0 +1,362 @@
+/* ==========================================================================
+   UNIFIED DYNAMIC MODAL ENGINE STYLING (ANIMATED & GLASSMORPHISM)
+   ========================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  position: relative;
+  background-color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  width: 100%;
+  max-width: 980px;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: translateY(24px) scale(0.96);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-backdrop.active .modal-card {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-color);
+  color: var(--navy-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition-bounce);
+  box-shadow: var(--shadow-sm);
+}
+
+.modal-close-btn:hover {
+  background-color: var(--primary-green);
+  color: #FFFFFF;
+  border-color: var(--primary-green);
+  transform: scale(1.1) rotate(90deg);
+}
+
+.modal-close-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Modal Layout Variants */
+
+/* 1. Team Modal Split Layout */
+.modal-team-content {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+}
+
+.modal-team-left {
+  background-color: #F8FAFC;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-right: 1px solid var(--border-color);
+}
+
+.modal-team-avatar {
+  width: 220px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-md);
+}
+
+.modal-team-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--navy-text);
+}
+
+.modal-team-role {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--primary-green);
+  margin-bottom: 4px;
+}
+
+.modal-team-dept {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.modal-team-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-team-right {
+  padding: 36px 40px;
+}
+
+.modal-team-bio {
+  font-size: 0.93rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.modal-focus-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.modal-focus-item {
+  text-align: center;
+  padding: 14px 10px;
+  background-color: var(--light-green-bg);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.modal-focus-item:hover {
+  transform: translateY(-2px);
+  background-color: rgba(45, 106, 79, 0.12);
+}
+
+.modal-focus-icon {
+  color: var(--primary-green);
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+}
+
+.modal-focus-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--navy-text);
+}
+
+/* 2. Service Modal Split Layout */
+.modal-service-content {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+}
+
+.modal-service-left {
+  position: relative;
+  background-color: var(--dark-green);
+  color: #FFFFFF;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.modal-service-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.modal-service-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 32px 28px;
+  background: linear-gradient(to top, rgba(27, 67, 50, 0.95), transparent);
+}
+
+.modal-service-right {
+  padding: 36px 40px;
+}
+
+.service-capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.capability-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  background-color: var(--bg-light);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--navy-text);
+  transition: var(--transition);
+}
+
+.capability-item:hover {
+  background-color: var(--light-green-bg);
+  transform: translateX(4px);
+}
+
+.capability-icon {
+  color: var(--primary-green);
+  flex-shrink: 0;
+}
+
+/* 3. Project Detail Modal Layout */
+.modal-project-content {
+  padding: 36px 40px;
+}
+
+.project-modal-header {
+  margin-bottom: 24px;
+}
+
+.project-modal-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.project-meta-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--light-green-bg);
+  color: var(--primary-green);
+  border-radius: var(--radius-pill);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.project-gallery-carousel {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-md);
+}
+
+.project-gallery-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.project-gallery-carousel:hover img {
+  transform: scale(1.04);
+}
+
+.project-tabs-bar {
+  display: flex;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+
+.project-tab-btn {
+  padding: 12px 20px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.project-tab-btn:hover {
+  color: var(--primary-green);
+}
+
+.project-tab-btn.active {
+  color: var(--primary-green);
+  border-bottom-color: var(--primary-green);
+  font-weight: 700;
+}
+
+.project-tab-pane {
+  display: none;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.project-tab-pane.active {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 32px;
+}
+
+/* Responsive Modal */
+@media (max-width: 880px) {
+  .modal-team-content,
+  .modal-service-content {
+    grid-template-columns: 1fr;
+  }
+  .modal-team-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 24px;
+  }
+  .modal-team-right, .modal-service-right, .modal-project-content {
+    padding: 24px 20px;
+  }
+  .modal-service-left {
+    height: 220px;
+  }
+  .project-tab-pane.active {
+    grid-template-columns: 1fr;
+  }
+  .modal-card {
+    max-height: 95vh;
+  }
+}

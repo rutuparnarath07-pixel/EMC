@@ -1,0 +1,244 @@
+/* ==========================================================================
+   SERVICES PAGE STYLING (ANIMATED & ULTRA RESPONSIVE)
+   ========================================================================== */
+
+/* Service Lifecycle Bar */
+.service-lifecycle-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 48px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.service-lifecycle-bar:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(45, 106, 79, 0.2);
+}
+
+.lifecycle-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.lifecycle-item:hover {
+  background-color: var(--light-green-bg);
+  transform: translateY(-2px);
+}
+
+.lifecycle-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--light-green-bg);
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  flex-shrink: 0;
+  transition: var(--transition-bounce);
+}
+
+.lifecycle-item:hover .lifecycle-icon {
+  background-color: var(--primary-green);
+  color: #FFFFFF;
+  transform: scale(1.1) rotate(6deg);
+}
+
+.lifecycle-text {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--navy-text);
+  line-height: 1.25;
+}
+
+/* What We Do: hero se thoda niche */
+.container.what-we-do {
+  padding-top: 72px;
+}
+
+/* Service Sector Cards Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+.service-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary-green);
+}
+
+.service-card-header {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+}
+
+.service-card-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.service-card:hover .service-card-header img {
+  transform: scale(1.08);
+}
+
+.service-card-icon-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  color: var(--primary-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-bounce);
+}
+
+.service-card:hover .service-card-icon-badge {
+  background-color: var(--primary-green);
+  color: #FFFFFF;
+  transform: scale(1.1) rotate(-6deg);
+}
+
+.service-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.service-card-title {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--navy-text);
+  margin-bottom: 8px;
+  transition: var(--transition-fast);
+}
+
+.service-card:hover .service-card-title {
+  color: var(--primary-green);
+}
+
+.service-card-desc {
+  font-size: 0.875rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.service-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-top: auto;
+  transition: var(--transition-fast);
+}
+
+.service-card:hover .service-card-link {
+  gap: 12px;
+}
+
+/* Approach Section */
+.approach-section {
+  padding: 80px 0;
+  background-color: var(--bg-light);
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.approach-card {
+  background-color: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.approach-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(45, 106, 79, 0.3);
+}
+
+.approach-card::after {
+  content: '→';
+  position: absolute;
+  top: 50%;
+  right: -16px;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+  color: var(--primary-green);
+  font-weight: 800;
+}
+
+.approach-card:last-child::after {
+  display: none;
+}
+
+.approach-step-num {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--primary-green);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 1024px) {
+  .container.what-we-do { padding-top: 56px; }
+  .service-lifecycle-bar { grid-template-columns: repeat(2, 1fr); }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .approach-grid { grid-template-columns: repeat(2, 1fr); }
+  .approach-card::after { display: none; }
+}
+
+@media (max-width: 600px) {
+  .container.what-we-do { padding-top: 40px; }
+  .service-lifecycle-bar, .services-grid, .approach-grid { grid-template-columns: 1fr; }
+}
