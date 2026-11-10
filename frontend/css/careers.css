@@ -7,7 +7,6 @@
   gap: 16px;
   margin-bottom: 60px;
 }
-
 .benefit-card {
   background-color: var(--bg-white);
   border: 1px solid var(--border-color);
@@ -17,61 +16,47 @@
   transition: var(--transition);
   box-shadow: var(--shadow-sm);
 }
-
 .benefit-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-hover);
   border-color: rgba(45, 106, 79, 0.3);
   background-color: var(--light-green-bg);
 }
-
 .benefit-icon {
   font-size: 1.5rem;
   color: var(--primary-green);
   margin-bottom: 12px;
   transition: var(--transition-bounce);
 }
-
-.benefit-card:hover .benefit-icon {
-  transform: scale(1.15) rotate(6deg);
-}
-
-.benefit-title {
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(--navy-text);
-  margin-bottom: 4px;
-}
-
-.benefit-desc {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
+.benefit-card:hover .benefit-icon { transform: scale(1.15) rotate(6deg); }
+.benefit-title { font-size: 0.875rem; font-weight: 700; color: var(--navy-text); margin-bottom: 4px; }
+.benefit-desc { font-size: 0.75rem; color: var(--text-muted); }
 
 /* Open Positions Section */
 #openPositions {
-  margin-top: 70px;      /* section ko niche karne ke liye: badhao = aur niche, ghatao = upar */
-  scroll-margin-top: 90px; /* "Explore Opportunities" click par header ke niche sahi se ruke */
+  margin-top: 70px;
+  scroll-margin-top: 90px;
 }
-
 .jobs-layout {
   display: grid;
   grid-template-columns: 1fr 340px;
   gap: 32px;
   margin-bottom: 60px;
 }
+.jobs-layout > div { min-width: 0; }
 
-/* grid children overflow na karein */
-.jobs-layout > div {
-  min-width: 0;
+.jobs-list { display: flex; flex-direction: column; gap: 16px; }
+.jobs-empty {
+  padding: 32px;
+  text-align: center;
+  color: var(--text-muted);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-md);
 }
 
-.jobs-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
+/* Job card
+   NOTE: card par transform nahi hai -> hover/click par jitter nahi hoga.
+   Sirf border + shadow badalte hain. */
 .job-card {
   background-color: #FFFFFF;
   border: 1px solid var(--border-color);
@@ -81,23 +66,15 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  transition: var(--transition);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
   box-shadow: var(--shadow-sm);
   cursor: pointer;
 }
-
 .job-card:hover {
   border-color: var(--primary-green);
   box-shadow: var(--shadow-hover);
-  transform: translateY(-4px);
 }
-
-.job-info {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-
+.job-info { display: flex; align-items: flex-start; gap: 16px; min-width: 0; }
 .job-icon {
   width: 50px;
   height: 50px;
@@ -109,40 +86,19 @@
   justify-content: center;
   font-size: 1.25rem;
   flex-shrink: 0;
-  transition: var(--transition-bounce);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
-
-.job-card:hover .job-icon {
-  background-color: var(--primary-green);
-  color: #FFFFFF;
-  transform: scale(1.1) rotate(6deg);
-}
-
+.job-card:hover .job-icon { background-color: var(--primary-green); color: #FFFFFF; }
 .job-title {
   font-size: 1.125rem;
   font-weight: 800;
   color: var(--navy-text);
-  margin-bottom: 4px;
-  transition: var(--transition-fast);
+  margin: 0 0 4px;
+  transition: color 0.2s ease;
 }
-
-.job-card:hover .job-title {
-  color: var(--primary-green);
-}
-
-.job-location {
-  font-size: 0.8125rem;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
-.job-tags {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
+.job-card:hover .job-title { color: var(--primary-green); }
+.job-location { font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 8px; }
+.job-tags { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
 .job-tag {
   padding: 4px 12px;
   border-radius: var(--radius-pill);
@@ -153,6 +109,26 @@
   border: 1px solid var(--border-color);
 }
 
+/* View / Apply buttons */
+.job-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.job-btn {
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  border: 1.5px solid var(--primary-green);
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.job-btn:focus-visible { outline: 3px solid rgba(45, 106, 79, 0.35); outline-offset: 2px; }
+.job-btn-view { background: transparent; color: var(--primary-green); }
+.job-btn-view:hover { background: var(--light-green-bg); }
+.job-btn-apply { background: var(--primary-green); color: #FFFFFF; }
+.job-btn-apply:hover { background: var(--dark-green); border-color: var(--dark-green); }
+
 /* Why Join Ecometrix */
 .why-emc-box {
   background: linear-gradient(135deg, var(--bg-light) 0%, #FFFFFF 100%);
@@ -161,40 +137,133 @@
   padding: 32px 24px;
   box-shadow: var(--shadow-md);
 }
+.why-emc-title { font-size: 1.25rem; font-weight: 800; color: var(--navy-text); margin-bottom: 16px; }
+.why-emc-list { display: flex; flex-direction: column; gap: 20px; }
+.why-emc-item { display: flex; align-items: flex-start; gap: 12px; }
+.why-emc-icon { color: var(--primary-green); font-size: 1.25rem; flex-shrink: 0; }
 
-.why-emc-title {
-  font-size: 1.25rem;
-  font-weight: 800;
+/* ===== Job modal (View Details + Apply) ===== */
+body.jm-lock { overflow: hidden; }
+
+.jm-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 30, 41, 0.6);
+}
+.jm-overlay.open { display: flex; }
+
+.jm-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  padding: 32px;
+  outline: none;
+  animation: jmIn 0.2s ease;
+}
+@keyframes jmIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+.jm-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--bg-light);
   color: var(--navy-text);
-  margin-bottom: 16px;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
 }
+.jm-close:hover { background: var(--light-green-bg); color: var(--primary-green); }
 
-.why-emc-list {
+.jm-head { padding-right: 40px; margin-bottom: 20px; }
+.jm-title { font-size: 1.5rem; font-weight: 800; color: var(--navy-text); margin: 0 0 6px; }
+
+.jm-content h4 { font-size: 0.9375rem; font-weight: 800; color: var(--navy-text); margin: 18px 0 6px; }
+.jm-content p, .jm-content li { font-size: 0.9rem; line-height: 1.7; color: var(--text-body); }
+.jm-content ul { padding-left: 20px; margin: 0; }
+
+.jm-footer {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-color);
 }
 
-.why-emc-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
+.jm-form label {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--navy-text);
 }
-
-.why-emc-icon {
-  color: var(--primary-green);
-  font-size: 1.25rem;
-  flex-shrink: 0;
+.jm-form input, .jm-form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text-body);
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm, 8px);
+  box-sizing: border-box;
 }
+.jm-form input:focus, .jm-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+}
+.jm-note { font-size: 0.75rem; color: var(--text-muted); margin: 0; }
+.jm-error { margin-top: 10px; font-size: 0.8125rem; font-weight: 600; color: #B42318; }
+.jm-success p { font-size: 0.9375rem; color: var(--text-body); line-height: 1.7; }
 
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width: 1024px) {
   .benefits-grid { grid-template-columns: repeat(3, 1fr); }
   .jobs-layout { grid-template-columns: 1fr; }
 }
-
 @media (max-width: 600px) {
   .benefits-grid { grid-template-columns: repeat(2, 1fr); }
-  .job-card { flex-direction: column; align-items: flex-start; }
+  .job-card { flex-direction: column; align-items: stretch; }
+  .job-actions { width: 100%; }
+  .job-btn { flex: 1; text-align: center; }
   .jobs-layout .search-box { width: 100%; }
+  .jm-overlay { padding: 0; align-items: flex-end; }
+  .jm-dialog { max-width: none; max-height: 92vh; border-radius: 20px 20px 0 0; padding: 24px 20px; }
+  .jm-footer .job-btn { flex: 1; }
+}
+
+/* ===== Dark mode (agar aapki site data-theme="dark" use karti hai) ===== */
+[data-theme="dark"] .job-card,
+[data-theme="dark"] .jm-dialog,
+[data-theme="dark"] .jm-form input,
+[data-theme="dark"] .jm-form textarea { background: #16232d; }
+
+/* ===== Apply form inside emcModal ===== */
+.job-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 600px) {
+  .job-form-row { grid-template-columns: 1fr; }
+  .job-modal-inner { padding: 24px 20px !important; }
 }
