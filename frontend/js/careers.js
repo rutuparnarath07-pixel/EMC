@@ -111,16 +111,14 @@ document.addEventListener('DOMContentLoaded', () => {
   renderJobsList(JOBS_DATA, container);
   setupJobFilters(container);
 
-  // Ek hi listener: View Details / Apply Now / card click
+  // Ek hi listener: View Details button ya card par click
   container.addEventListener('click', (e) => {
     const card = e.target.closest('.job-card');
     if (!card) return;
     const job = JOBS_DATA.find(j => j.id === parseInt(card.dataset.id, 10));
     if (!job) return;
 
-    const btn = e.target.closest('[data-action]');
-    const action = btn ? btn.dataset.action : 'view';
-    openJobModal(job, action === 'apply');
+    openJobModal(job);
   });
 });
 
@@ -145,8 +143,7 @@ function renderJobsList(data, container) {
         </div>
       </div>
       <div class="job-actions">
-        <button type="button" class="job-btn job-btn-view" data-action="view">View Details</button>
-        <button type="button" class="job-btn job-btn-apply" data-action="apply">Apply Now</button>
+        <button type="button" class="job-btn job-btn-apply" data-action="view">View Details →</button>
       </div>
     </div>
   `).join('');
@@ -194,69 +191,87 @@ function setupJobFilters(container) {
 }
 
 /* ---------- Modal: details + apply form ---------- */
-function openJobModal(job, scrollToForm) {
+function openJobModal(job) {
   const respHtml = job.responsibilities.map(r => `<li>${escapeHTML(r)}</li>`).join('');
   const reqHtml = job.requirements.map(r => `<li>${escapeHTML(r)}</li>`).join('');
 
   const modalHtml = `
-    <div style="padding: 40px;" class="job-modal-inner">
-      <div style="display:flex; align-items:center; gap:12px; margin-bottom:8px; flex-wrap:wrap;">
-        <span class="job-tag" style="background:var(--light-green-bg); color:var(--primary-green); font-weight:700;">${escapeHTML(job.department)}</span>
+    <div class="job-modal-inner">
+      <div class="jd-tags">
+        <span class="job-tag jd-tag-dept">${escapeHTML(job.department)}</span>
         <span class="job-tag">${escapeHTML(job.type)}</span>
       </div>
+      <h2 class="jd-title">${escapeHTML(job.title)}</h2>
+      <div class="jd-meta">${PIN_ICON}${escapeHTML(job.location)} • Posted ${escapeHTML(job.postedDate)}</div>
+      <p class="jd-desc">${escapeHTML(job.description)}</p>
 
-      <h2 style="font-size:2rem; font-weight:800; color:var(--navy-text); margin-bottom:6px;">${escapeHTML(job.title)}</h2>
-      <div style="font-size:0.9375rem; color:var(--text-muted); margin-bottom:24px;">${PIN_ICON}${escapeHTML(job.location)} • Posted ${escapeHTML(job.postedDate)}</div>
-
-      <p style="font-size:1rem; color:var(--text-body); line-height:1.6; margin-bottom:24px;">${escapeHTML(job.description)}</p>
-
-      <h4 style="font-size:1.125rem; font-weight:700; margin-bottom:12px;">Key Responsibilities:</h4>
-      <ul style="padding-left:20px; font-size:0.9375rem; color:var(--text-body); line-height:1.7; margin-bottom:24px;">${respHtml}</ul>
-
-      <h4 style="font-size:1.125rem; font-weight:700; margin-bottom:12px;">Qualifications & Requirements:</h4>
-      <ul style="padding-left:20px; font-size:0.9375rem; color:var(--text-body); line-height:1.7; margin-bottom:24px;">${reqHtml}</ul>
-
-      <div style="margin-bottom:28px;">
-        <button type="button" class="job-btn job-btn-apply" id="jobScrollApplyBtn">Apply Now ↓</button>
+      <div class="jd-cols">
+        <div class="jd-block">
+          <h4>Key Responsibilities</h4>
+          <ul>${respHtml}</ul>
+        </div>
+        <div class="jd-block">
+          <h4>Qualifications &amp; Requirements</h4>
+          <ul>${reqHtml}</ul>
+        </div>
       </div>
 
-      <div id="jobApplySection" style="background:var(--bg-light); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:28px;">
-        <h3 style="font-size:1.25rem; font-weight:800; margin-bottom:16px;">Apply for this Position</h3>
-        <form id="jobApplyForm" novalidate style="display:flex; flex-direction:column; gap:16px;">
+      <section class="apply-card" id="jobApplySection">
+        <div class="apply-head">
+          <div class="apply-head-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+          </div>
+          <div>
+            <h3>Apply for this Position</h3>
+            <p>${escapeHTML(job.title)} &middot; takes about 2 minutes</p>
+          </div>
+        </div>
+
+        <form id="jobApplyForm" class="apply-form" novalidate>
           <input type="hidden" name="job_id" value="${job.id}">
           <input type="hidden" name="job_title" value="${escapeHTML(job.title)}">
-          <div class="job-form-row">
-            <input type="text" name="full_name" placeholder="Full Name *" required class="form-control" autocomplete="name">
-            <input type="email" name="email" placeholder="Email Address *" required class="form-control" autocomplete="email">
+
+          <div class="apply-row">
+            <label class="apply-field">
+              <span>Full Name <b>*</b></span>
+              <input type="text" name="full_name" placeholder="e.g. Priya Sahu" required autocomplete="name">
+            </label>
+            <label class="apply-field">
+              <span>Email Address <b>*</b></span>
+              <input type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+            </label>
           </div>
-          <div class="job-form-row">
-            <input type="tel" name="phone" placeholder="Phone Number *" required class="form-control" autocomplete="tel">
-            <input type="text" name="experience" placeholder="Years of Experience *" required class="form-control">
+
+          <div class="apply-row">
+            <label class="apply-field">
+              <span>Phone Number <b>*</b></span>
+              <input type="tel" name="phone" placeholder="+91 98765 43210" required autocomplete="tel">
+            </label>
+            <label class="apply-field">
+              <span>Years of Experience <b>*</b></span>
+              <input type="text" name="experience" placeholder="e.g. 3 years" required>
+            </label>
           </div>
-          <textarea name="cover_letter" placeholder="Cover Letter / Brief Profile..." class="form-control" style="min-height:90px;"></textarea>
-          <div id="jobFormMsg" role="alert" style="display:none; font-size:0.875rem; font-weight:600; line-height:1.5;"></div>
-          <button type="submit" class="btn btn-primary" id="jobSubmitBtn" style="align-self:flex-start;">Submit Application →</button>
+
+          <label class="apply-field">
+            <span>Cover Letter / Brief Profile</span>
+            <textarea name="cover_letter" rows="4" placeholder="Tell us briefly about your experience and why you'd like to join Ecometrix."></textarea>
+          </label>
+
+          <div id="jobFormMsg" class="apply-msg" role="alert" style="display:none;"></div>
+
+          <div class="apply-actions">
+            <button type="submit" class="apply-submit" id="jobSubmitBtn">Submit Application →</button>
+            <span class="apply-note">Your details are only used for hiring at Ecometrix.</span>
+          </div>
         </form>
-      </div>
+      </section>
     </div>
   `;
 
   window.emcModal.open(modalHtml);
 
-  const applySection = document.getElementById('jobApplySection');
-  const scrollBtn = document.getElementById('jobScrollApplyBtn');
   const applyForm = document.getElementById('jobApplyForm');
-
-  function goToForm() {
-    if (!applySection) return;
-    applySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    const first = applyForm && applyForm.querySelector('input[name="full_name"]');
-    if (first) setTimeout(() => first.focus({ preventScroll: true }), 350);
-  }
-
-  if (scrollBtn) scrollBtn.addEventListener('click', goToForm);
-  if (scrollToForm) setTimeout(goToForm, 120); // card ke "Apply Now" se seedha form par
-
   if (applyForm) applyForm.addEventListener('submit', (e) => {
     e.preventDefault();
     submitApplication(applyForm, job);
@@ -266,7 +281,7 @@ function openJobModal(job, scrollToForm) {
 function showFormMsg(el, text, ok) {
   el.textContent = text;
   el.style.display = 'block';
-  el.style.color = ok ? 'var(--primary-green)' : '#B42318';
+  el.className = 'apply-msg ' + (ok ? 'ok' : 'err');
 }
 
 function submitApplication(form, job) {
@@ -311,8 +326,8 @@ function submitApplication(form, job) {
         '\nExperience: ' + payload.experience + '\n\n' + (payload.cover_letter || '')
       );
       msg.style.display = 'block';
-      msg.style.color = '#B42318';
+      msg.className = 'apply-msg err';
       msg.innerHTML = 'Application online submit nahi ho paayi. Please try again, ya ' +
-        '<a href="mailto:' + HR_EMAIL + '?subject=' + subject + '&body=' + body + '" style="color:var(--primary-green); text-decoration:underline;">email se bhej do</a> (CV attach karke).';
+        '<a href="mailto:' + HR_EMAIL + '?subject=' + subject + '&body=' + body + '" style="color:inherit; text-decoration:underline;">email se bhej do</a> (CV attach karke).';
     });
 }
