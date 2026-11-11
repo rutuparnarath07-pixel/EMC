@@ -1,0 +1,43 @@
+/* ==========================================================================
+   RESPONSIVE FIXES (mobile + tab) - loaded last on every page
+   ========================================================================== */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-x: clip; }
+img, video, iframe { max-width: 100%; }
+
+/* Careers: inline-styled rows */
+.careers-head-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 34px; }
+.careers-head-row p { max-width: 480px; }
+.careers-cta-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.careers-voices { display: grid; grid-template-columns: 1fr 300px; gap: 32px; align-items: center; }
+
+@media (max-width: 900px) {
+  .careers-voices { grid-template-columns: 1fr !important; padding: 28px !important; }
+  .careers-head-row p { text-align: left !important; }
+  .page-hero-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+  .page-hero-grid > div[style*="align-items:flex-end"] { align-items: flex-start !important; }
+  .handwritten-quote { white-space: normal; overflow-wrap: anywhere; }
+}
+
+@media (max-width: 640px) {
+  .page-hero { padding: 36px 0 44px; }
+  .page-hero-title { font-size: clamp(2rem, 9vw, 2.6rem); }
+  .page-hero .handwritten-quote { font-size: 1.9rem !important; }
+  #openPositions h2 { font-size: 1.75rem !important; }
+  .careers-cta-row .btn { width: 100%; text-align: center; justify-content: center; }
+  .careers-voices { padding: 22px !important; gap: 20px !important; }
+  .container { padding-left: 18px; padding-right: 18px; }
+
+  /* cookie banner: compact on phones */
+  .emc-cookie-banner { padding: 14px 16px; max-height: 70vh; overflow-y: auto; }
+  .emc-cookie-container { gap: 10px; padding-right: 28px; }
+  .emc-cookie-banner p { font-size: 0.8125rem; line-height: 1.45; margin: 0; }
+  .emc-cookie-banner button, .emc-cookie-banner .emc-cookie-btn { padding: 9px 12px; font-size: 0.8125rem; }
+}
+
+@media (max-width: 700px) {
+  .quote-callout-box { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; }
+  .quote-callout-box > div { text-align: left !important; flex-shrink: 1 !important; }
+}
+@media (max-width: 900px) { .page-hero .handwritten-quote { text-align: left !important; } }
+
