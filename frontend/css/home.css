@@ -5,8 +5,8 @@
 /* Hero Section with Auto Slider */
 .hero-slider-section {
   position: relative;
-  min-height: 240px;
-  padding: 24px 0 10px;
+  min-height: 440px;
+  padding: 54px 0 64px;
   overflow: hidden;
   background-color: #F8FAFC;
   display: flex;
