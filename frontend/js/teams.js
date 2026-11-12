@@ -1,7 +1,3 @@
-/* ==========================================================================
-   OUR TEAMS INTERACTIVE MODULE & MODAL HANDLER
-   ========================================================================== */
-
 const TEAM_MEMBERS_DATA = [
   {
     id: 1,
@@ -106,7 +102,7 @@ const TEAM_MEMBERS_DATA = [
   {
     id: 8,
     name: "Mr. Bhaskar Samanta",
-    role: "assets/Team Photos/Bhaskar-Samanta.jpg",
+    role: "Senior General Manager, Engineering",
     department: "Engineering",
     photo: "assets/Team Photos/Bhaskar-Samanta.jpg",
     bio: "Mr. Bhaskar Samanta is a Civil Engineer with a BE in Civil Engineering and an M.Tech in Environmental Engineering. He brings over two decades of professional experience across Odisha, Madhya Pradesh, Chhattisgarh, Delhi, Gujarat, and West Bengal.\n\nHe has held key roles in JICA-assisted OISIP projects and has worked with organizations such as IPE Global, Tata Consulting Engineers Ltd., and STUP Consultants Pvt. Ltd. His responsibilities have included construction supervision, design review, drawing coordination, and project cost estimation.\n\nHe is an expert in water supply, sewerage, and drainage projects and is recognized for his ability to manage complex engineering assignments while delivering quality outcomes within defined timelines.",
