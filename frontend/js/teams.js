@@ -8,7 +8,7 @@ const TEAM_MEMBERS_DATA = [
     name: "Mr. Chinmay Tripathy",
     role: "Chief Executive Officer",
     department: "Leadership",
-    photo: "assets/images/ct_no_bg.png",
+    photo: "assets/images/CT_no_BG.png",
     bio: "Mr. Chinmay Tripathy is an Environmental Engineer with over 22 years of experience in the water sector, with significant national and international exposure. He holds a B.Tech in Civil Engineering and an M.Tech in Environmental Engineering.\n\nHe has collaborated extensively with the Government of India, various State Governments, and bilateral agencies on JICA- and ADB-assisted projects. His professional journey includes associations with leading international consulting firms such as Tokyo Engineering Consultants, Tetra Tech, and Egis. Since the inception of WATCO, Government of Odisha, he has been closely associated with the organization and has played a key role in the landmark <strong>24×7 Drink from Tap Mission</strong>.\n\nMr. Tripathy is a member of the International Water Association (IWA) and the Indian Water Works Association (IWWA), and serves as a Governing Board Member of the Odisha Urban Academy as a sectoral expert. He has also participated in several international exposure programs in water and wastewater management across Japan, Israel, Europe, and Singapore.",
     focusAreas: [
       { icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>`, label: "Sustainable Infrastructure" },
