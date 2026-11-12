@@ -6,6 +6,7 @@
   <title>Our Services | Ecometrix Consultants Pvt. Ltd.</title>
   <meta name="description" content="Our Services at Ecometrix Consultants (EMC): Plan & Assess, Survey & Investigate, Design & Engineer, Manage & Deliver, and Digital & Spatial services across the infrastructure lifecycle.">
   <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/chatbot.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/modal.css">
@@ -30,6 +31,7 @@
   }
   </script>
   <script>document.documentElement.classList.add("js-reveal");</script>
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
@@ -73,7 +75,7 @@
         <!-- <li><a href="projects.html" class="nav-link">Projects</a></li>
         <li><a href="insights.html" class="nav-link">Insights</a></li> -->
         <li class="nav-item-has-dropdown">
-          <a href="advisory-board.html" class="nav-link">Our Peoples ▾</a>
+          <a href="advisory-board.html" class="nav-link">Our People ▾</a>
           <ul class="nav-dropdown">
             <li><a href="advisory-board.html" class="nav-dropdown-link">Advisory Board</a></li>
             <li><a href="team-emc.html" class="nav-dropdown-link">Team EMC</a></li>
@@ -94,41 +96,41 @@
         </button>
 
         <a href="contact.html" class="btn btn-primary">Let's Connect →</a>
-
-        <button class="mobile-toggle" aria-label="Toggle mobile menu">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-        </button>
-      </div>
+        <button type="button" class="mobile-toggle" id="mobileNavToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNavDrawer">
+            <svg class="icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <svg class="icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 6l12 12M18 6L6 18"></path></svg>
+          </button>
+        </div>
     </div>
   </header>
 
-  <div class="mobile-nav-drawer">
-    <a href="index.html" class="mobile-nav-link">Home</a>
-    <a href="about.html" class="mobile-nav-link">About Us</a>
-    <a href="our-services.html" class="mobile-nav-link active">Our Services</a>
-    <a href="services.html" class="mobile-nav-link">Delivery Experience</a>
-    <!-- <a href="projects.html" class="mobile-nav-link">Projects</a>
-    <a href="insights.html" class="mobile-nav-link">Insights</a> -->
-    <div class="mobile-nav-group">
-      <div class="mobile-nav-group-title">Our Peoples</div>
-      <a href="advisory-board.html" class="mobile-nav-link mobile-nav-sublink">Advisory Board</a>
-      <a href="team-emc.html" class="mobile-nav-link mobile-nav-sublink">Team EMC</a>
-    </div>
-    <a href="careers.html" class="mobile-nav-link">Careers</a>
-    <a href="contact.html" class="mobile-nav-link">Contact</a>
-    <a href="#" class="mobile-nav-link emcone-nav-btn" onclick="openEmconeModal(event)">EMCOne Portal</a>
-    
-    <div style="display:flex; align-items:center; justify-content:space-between; margin-top:16px; padding:12px; background:var(--light-green-bg); border-radius:var(--radius-sm);">
-      <span style="font-size:0.8125rem; font-weight:700; color:var(--navy-text);">Quick Tools:</span>
-      <div style="display:flex; gap:8px;">
-        <button type="button" class="header-action-btn header-pref-toggle" title="Site Preferences & Accessibility">⚙️</button>
-        <button type="button" class="header-action-btn" data-a11y-action="contrast" title="High Contrast">♿</button>
-        <button type="button" class="header-action-btn" data-a11y-action="large" title="Increase Font Size">A+</button>
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile navigation">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <a href="our-services.html" class="mobile-nav-link">Our Services</a>
+      <a href="services.html" class="mobile-nav-link">Delivery Experience</a>
+      <div class="mobile-nav-group">
+        <button type="button" class="mobile-nav-group-toggle" aria-expanded="false" aria-controls="mobilePeopleMenu">
+          <span>Our People</span>
+          <svg class="chev" width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4" d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="mobile-nav-sub" id="mobilePeopleMenu">
+          <a href="advisory-board.html" class="mobile-nav-link mobile-nav-sublink">Advisory Board</a>
+          <a href="team-emc.html" class="mobile-nav-link mobile-nav-sublink">Team EMC</a>
+        </div>
       </div>
-    </div>
 
-    <a href="contact.html" class="btn btn-primary" style="margin-top:12px; text-align:center;">Let's Connect →</a>
-  </div>
+      <div class="mobile-nav-tools">
+        <span class="mobile-nav-tools-label">Quick Tools:</span>
+        <div class="mobile-nav-tools-btns">
+          <button type="button" class="header-action-btn header-pref-toggle" title="Site Preferences &amp; Accessibility">⚙️</button>
+          <button type="button" class="header-action-btn" data-a11y-action="contrast" title="High Contrast">♿</button>
+          <button type="button" class="header-action-btn" data-a11y-action="large" title="Increase Font Size">A+</button>
+        </div>
+      </div>
+
+      <a href="contact.html" class="btn btn-primary mobile-nav-cta">Get in Touch →</a>
+</div>
 
   <section id="main-content" tabindex="-1" class="os-hero">
     <div class="container">
@@ -283,7 +285,7 @@
         <!-- <li><a href="projects.html" class="footer-link">Projects</a></li>
         <li><a href="insights.html" class="footer-link">Insights</a></li> -->
         <li class="nav-item-has-dropdown">
-          <a href="advisory-board.html" class="footer-link">Our Peoples ▾</a>
+          <a href="advisory-board.html" class="footer-link">Our People ▾</a>
           <ul class="nav-dropdown">
             <li><a href="advisory-board.html" class="nav-dropdown-link">Advisory Board</a></li>
             <li><a href="team-emc.html" class="nav-dropdown-link">Team EMC</a></li>
