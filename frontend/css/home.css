@@ -1367,3 +1367,73 @@
   animation: none !important;
 }
 .world-map-svg .wm-route-glow { stroke-opacity: 0.85; stroke-width: 2.4; }
+
+/* ==========================================================
+   DELIVERY EXPERTISE: no scroll-jacking, normal section
+   ========================================================== */
+.expertise-scroll-track {
+  height: auto !important;
+}
+.sticky-expertise {
+  position: relative !important;
+  top: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+  padding: 56px 0 !important;
+}
+
+/* ==========================================================
+   ISO CERTIFICATIONS: static, all cards in a single row
+   ========================================================== */
+.iso-marquee-wrapper {
+  overflow: visible;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+.iso-marquee-track {
+  width: 100%;
+  animation: none !important;
+  transform: none !important;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 20px;
+}
+.iso-marquee-track .iso-badge-item {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 18px 14px;
+}
+.iso-marquee-track .iso-logo-svg {
+  max-width: 100%;
+}
+.iso-marquee-track .iso-sub-desc {
+  white-space: normal;
+  font-size: 0.8125rem;
+}
+@media (max-width: 768px) {
+  .iso-marquee-track { gap: 8px; }
+  .iso-marquee-track .iso-badge-item { padding: 10px 4px; }
+  .iso-marquee-track .iso-logo-svg { height: 56px; }
+  .iso-marquee-track .iso-sub-desc { font-size: 0.625rem; }
+}
+/* Delivery Expertise: khula hua card chaura (wide), taaki text poora aaye, height wahi rahe */
+.expertise-card-morph { cursor: pointer; min-width: 0; }
+@media (min-width: 992px) {
+  .expertise-card-morph { flex: 1 1 0 !important; }
+  .expertise-card-morph.active {
+    flex: 4.5 1 0 !important;
+    padding: 16px 20px;
+  }
+  .expertise-card-morph.active .card-expanded-body { max-height: none; }
+  .expertise-card-morph.active .sector-expanded-heading { font-size: 1.05rem; }
+  .expertise-card-morph.active .sector-expanded-desc { font-size: 0.8125rem; }
+
+  /* height fixed: cursor aate hi height upar-neeche na ho, sirf width smooth badle */
+  .expertise-cards-flex { height: 250px; min-height: 250px; align-items: stretch; }
+  .expertise-card-morph { height: 100%; min-height: 0; overflow: hidden; }
+  .expertise-card-morph .card-expanded-body { max-height: none; }
+  /* text tab dikhe jab width ban chuki ho */
+  .expertise-card-morph .card-expanded-body { transition: opacity .3s ease, transform .3s ease, visibility .3s ease; }
+  .expertise-card-morph.active .card-expanded-body { transition-delay: .3s; }
+}
