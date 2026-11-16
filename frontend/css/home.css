@@ -1430,7 +1430,7 @@
   .expertise-card-morph.active .sector-expanded-desc { font-size: 0.8125rem; }
 
   /* height fixed: cursor aate hi height upar-neeche na ho, sirf width smooth badle */
-  .expertise-cards-flex { height: 250px; min-height: 250px; align-items: stretch; }
+  .expertise-cards-flex { height: 280px; min-height: 280px; align-items: stretch; }
   .expertise-card-morph { height: 100%; min-height: 0; overflow: hidden; }
   .expertise-card-morph .card-expanded-body { max-height: none; }
   /* text tab dikhe jab width ban chuki ho */
