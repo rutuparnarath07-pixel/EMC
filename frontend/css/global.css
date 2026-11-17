@@ -340,7 +340,6 @@ p:last-child {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--primary-green);
   background-color: var(--light-green-bg);
   padding: 6px 14px;
   border-radius: var(--radius-pill);
