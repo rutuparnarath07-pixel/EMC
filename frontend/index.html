@@ -302,16 +302,19 @@
 
       <div class="container hero-content-wrapper">
         <div class="hero-content">
-          <div class="section-badge">ENGINEERING A BETTER TOMORROW</div>
-          <h1 class="hero-title">Sustainable Infrastructure for <span
+          <div class="section-badge">Multidisciplinary Excellence, Enriching Lives</div>
+          <h1 class="hero-title">Beyond Engineering, Towards a<span
               class="hero-title-highlight"
-              style="color: #9fd032 !important; -webkit-text-fill-color: #9fd032 !important; background: none !important;">Healthier
-              Lives</span></h1>
+              style="color: #9fd032 !important; -webkit-text-fill-color: #9fd032 !important; background: none !important;"> Better Tomorrow</span></h1>
           <p class="hero-description">
             Ecometrix Consultants Pvt. Ltd. (EMC) is a leading engineering and
-            technical consultancy delivering end-to-end infrastructure
-            development, engineering and project management solutions across
-            India and beyond.
+            technical consultancy headquartered in
+            Bhubaneswar, Odisha. Established in the year 2015, EMC delivers
+            end-to-end infrastructure development,
+            engineering & project management solutions spanning water supply,
+            used water management, stormwater
+            drainage, urban infrastructure planning, GIS & IT, transportation,
+            digital solutions and beyond.
           </p>
           <div class="hero-actions">
             <a href="projects.html" class="btn btn-primary">Explore Our Work
@@ -586,7 +589,7 @@
                       <span class="sector-pill">Urban Drainage Master
                         Planning</span>
                       <span class="sector-pill">Project Management Consultancy
-                        For Flood Mitigation</span>
+                        for Flood Mitigation</span>
 
                     </div>
                     <a href="services.html" class="sector-detail-link">Explore
@@ -797,15 +800,14 @@
                   <div class="card-expanded-body">
                     <h3 class="sector-expanded-heading">Designing Intelligent
                       Networks, Delivering Seamless Futures</h3>
-                    <p class="sector-expanded-desc">End-to-end solutions for
+                    <p class="sector-expanded-desc">Complete solutions for
                       global telecommunications industry – from network
                       architectures and fiber designs to deployment
                       strategies.</p>
-                    <div class="sector-highlights-list">
-                      <span class="sector-pill">40+ States in USA & 1 Province
-                        in Canada</span>
                       <span class="sector-pill">Fiber Design</span>
                       <span class="sector-pill">Pole Design</span>
+                      <span class="sector-pill">Permit Management</span>
+                      <span class="sector-pill">Environmental & Structural</span>
                     </div>
                     <a href="services.html" class="sector-detail-link">Explore
                       Sector Details →</a>
@@ -857,9 +859,10 @@
       <div class="container">
         <div class="spv-hero">
           <div class="spv-hero-left">
-            <h2 class="spv-title">Engineering 24×7 <span>Drink From Tap Water Systems</span></h2>
+            <h2 class="spv-title">Engineering 24×7 <span>Drink From Tap Water
+                Systems</span></h2>
             <p class="spv-sub">End-to-end expertise
-              From Network Planning to
+              from Network Planning to
               Reliable Water at Every Tap</p>
             <div class="spv-mini-stats">
               <div
@@ -1048,10 +1051,11 @@
           <div class="section-badge">OUR PRESENCE</div>
           <h2 class="presence-title">Nationwide Footprint. Growing Global
             Impact.</h2>
-          <p class="presence-text">8 regional offices operating across 20+
-            States and UTs with an emerging international footprint.</p>
-          <a href="contact.html" class="btn btn-outline-white">Discover Our
-            Presence →</a>
+          <p class="presence-text">10 regional offices operating across 17
+            States and UTs in India with an emerging international
+            footprint.</p>
+          <a href="contact.html" class="btn btn-outline-white">Discover More
+            →</a>
         </div>
 
         <div class="presence-map-stage">
@@ -1579,8 +1583,8 @@
         </div>
 
         <div class="footer-bottom">
-          <div>© 2024 Ecometrix Consultants Pvt. Ltd. All rights
-            reserved.</div>
+          <div>© 2026 Ecometrix Consultants Pvt. Ltd. All Rights
+            Reserved.</div>
           <div class="footer-visitor-counter">
             <span class="visitor-pulse-dot"></span>
             <span class="visitor-counter-text">Live Visitors:</span>
@@ -1745,5 +1749,26 @@
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && box.classList.contains('active')) closeM(); });
     })();
   </script>
+      <script>
+    /* Hero description fix: i18n.js / koi aur script purana text wapas laaye to ise dobara sahi kar deta hai */
+    (function () {
+      var el = document.querySelector('.hero-description');
+      if (!el) return;
+      var NEW_TEXT = 'Ecometrix Consultants Pvt. Ltd. (EMC) is a leading engineering and technical consultancy headquartered in Bhubaneswar, Odisha. Established in the year 2015, EMC delivers end-to-end infrastructure development, engineering & project management solutions spanning water supply, used water management, stormwater drainage, urban infrastructure planning, GIS & IT, transportation, digital solutions and beyond.';
+      function fix() {
+        var lang = (document.documentElement.lang || 'en').slice(0, 2).toLowerCase();
+        if (lang !== 'en') return;
+        if (el.textContent.replace(/\s+/g, ' ').trim() === NEW_TEXT) return;
+        el.textContent = NEW_TEXT;
+      }
+      fix();
+      window.addEventListener('load', fix);
+      setTimeout(fix, 300);
+      setTimeout(fix, 1200);
+      if (window.MutationObserver) {
+        new MutationObserver(fix).observe(el, { childList: true, characterData: true, subtree: true });
+      }
+    })();
+    </script>
   </body>
 </html>
