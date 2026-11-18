@@ -537,10 +537,11 @@ p:last-child {
 }
 
 .stat-info .stat-number {
-  font-size: 1.65rem;
-  font-weight: 800;
-  color: var(--navy-text);
-  line-height: 1.1;
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--navy-text);
+    line-height: 1.1;
+    white-space: nowrap;
 }
 
 .stat-info .stat-label {
