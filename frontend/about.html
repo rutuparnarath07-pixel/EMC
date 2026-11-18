@@ -170,20 +170,17 @@
       </div>
     </section>
 
-    <!-- ===================== VISION & MISSION (icons only, journey path) ===================== -->
     <section class="about-sec about-vm-section" id="vision-mission">
       <div class="container">
         <div class="about-vm-journey" data-reveal>
           <div class="about-vm-track" aria-hidden="true"><span
               class="about-vm-dot"></span></div>
 
-          <!-- VISION: hand holding a light bulb -->
           <div class="about-vm-item">
             <span class="about-vm-node">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round" aria-hidden="true">
-                <!-- bulb (scaled down and placed above the hand) -->
                 <g class="vision-bulb"
                   transform="translate(5.4 -0.6) scale(0.55)"
                   stroke-width="3.6">
@@ -192,7 +189,6 @@
                   <path d="M9 18h6" />
                   <path d="M10 22h4" />
                 </g>
-                <!-- open hand -->
                 <path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17" />
                 <path
                   d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9" />
@@ -206,7 +202,6 @@
               solutions.</p>
           </div>
 
-          <!-- MISSION: rocket -->
           <div class="about-vm-item about-vm-item-alt">
             <span class="about-vm-node">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
@@ -717,7 +712,7 @@
                     stroke-linecap="round" stroke-linejoin="round"><path
                       d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle
                       cx="12" cy="10" r="3"></circle></svg>
-                  <span>DCB 119, 1st Floor, DLF Cybercity,Patia, Bhubaneswar –
+                  <span>DCB 119, 1st Floor, DLF Cybercity, Patia, Bhubaneswar –
                     751024, Odisha, India</span>
                 </li>
                 <li class="footer-contact-item">
@@ -735,40 +730,76 @@
                     stroke-linecap="round" stroke-linejoin="round"><path
                       d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline
                       points="22,6 12,13 2,6"></polyline></svg>
-                  <a href="mailto:info@ecometrix.co.in">info@ecometrix.co.in</a>
+                  <a
+                    href="mailto:info@ecometrix.co.in">info@ecometrix.co.in</a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="footer-nav">
-            <ul class="footer-links">
-              <li><a href="index.html" class="footer-links">Home</a></li>
-              <li><a href="about.html" class="footer-links active">About
-                  Us</a></li>
+
+          <nav class="footer-col" aria-label="Quick Links">
+            <h5 class="footer-col-title">Quick Links</h5>
+            <ul class="footer-menu">
+              <li><a href="index.html" class="footer-link active">Home</a></li>
+              <li><a href="about.html" class="footer-link">About Us</a></li>
               <li><a href="our-services.html" class="footer-link">Our
                   Services</a></li>
               <li><a href="services.html" class="footer-link">Delivery
                   Experience</a></li>
-              <!-- <li><a href="projects.html" class="footer-link">Projects</a></li>
-            <li><a href="insights.html" class="footer-link">Insights</a></li> -->
-              <li class="nav-item-has-dropdown">
-                <a href="advisory-board.html" class="footer-link">Our People
-                  ▾</a>
-                <ul class="nav-dropdown">
-                  <li><a href="advisory-board.html"
-                      class="nav-dropdown-link">Advisory Board</a></li>
-                  <li><a href="team-emc.html" class="nav-dropdown-link">Team
-                      EMC</a></li>
-                </ul>
-              </li>
+              <li><a href="advisory-board.html" class="footer-link">Our
+                  People</a></li>
               <li><a href="careers.html" class="footer-link">Careers</a></li>
               <li><a href="contact.html" class="footer-link">Contact</a></li>
-              <li><a href="#" class="footer-link emcone-nav-btn"
-                  onclick="openEmconeModal(event)">EMCOne</a></li>
             </ul>
+          </nav>
+
+          <nav class="footer-col" aria-label="Our Services">
+            <h5 class="footer-col-title">Our Services</h5>
+            <ul class="footer-menu">
+              <li><a href="our-services.html#plan-assess"
+                  class="footer-link">Plan &amp; Assess</a></li>
+              <li><a href="our-services.html#survey-investigate"
+                  class="footer-link">Survey &amp; Investigate</a></li>
+              <li><a href="our-services.html#design-engineer"
+                  class="footer-link">Design &amp; Engineer</a></li>
+              <li><a href="our-services.html#manage-deliver"
+                  class="footer-link">Manage &amp; Deliver</a></li>
+              <li><a href="our-services.html#digital-spatial"
+                  class="footer-link">Digital &amp; Spatial</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer-col footer-connect">
+            <h5 class="footer-col-title">Connect With Us</h5>
+            <p class="footer-tagline">People Places Progress Together</p>
+            <div class="footer-cta">
+              <a href="#" class="footer-btn footer-btn-ghost"
+                onclick="openEmconeModal(event)">EMCOne</a>
+              <a href="contact.html"
+                class="footer-btn footer-btn-primary">Contact Us <svg
+                  fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  width="14" height="14" aria-hidden="true"><path
+                    stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg></a>
+            </div>
+            <div class="footer-socials">
+              <a href="#" class="social-icon" title="LinkedIn"
+                aria-label="LinkedIn"><svg fill="currentColor"
+                  viewBox="0 0 24 24"><path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.78a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z" /></svg></a>
+              <a href="#" class="social-icon" title="YouTube"
+                aria-label="YouTube"><svg fill="currentColor"
+                  viewBox="0 0 24 24"><path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg></a>
+              <a href="#" class="social-icon" title="X" aria-label="X"><svg
+                  fill="currentColor" viewBox="0 0 24 24"><path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg></a>
+            </div>
           </div>
-          <div class="footer-slogan">
-            <!-- <div class="handwritten-quote-light">People Places Progress Together</div> -->
+          <!-- [HIDDEN] Subscribe to Insights (newsletter) block - remove this comment wrapper to restore
+<div class="footer-slogan">
+             <div class="handwritten-quote-light">People Places Progress
+                Together</div> 
             <div class="footer-newsletter-box">
               <h5 class="newsletter-title">Subscribe to Insights</h5>
               <p class="newsletter-desc">Get our latest infrastructure &
@@ -776,8 +807,9 @@
               <form class="newsletter-form"
                 onsubmit="event.preventDefault(); handleNewsletterSubmit(this);">
                 <div class="newsletter-input-group">
-                  <input type="email" placeholder="Enter your email address..."
-                    required class="newsletter-input">
+                  <input type="email"
+                    placeholder="Enter your email address..." required
+                    class="newsletter-input">
                   <button type="submit" class="newsletter-btn"
                     title="Subscribe">
                     <span>Subscribe</span>
@@ -791,13 +823,15 @@
               </form>
             </div>
           </div>
+-->
         </div>
+
         <div class="footer-bottom">
-          <div>© 2026 Ecometrix Consultants Pvt. Ltd. All Rights
-            Reserved.</div>
+          <div class="footer-copy">© 2026 Ecometrix Consultants Pvt. Ltd. All
+            Rights Reserved.</div>
           <div class="footer-visitor-counter">
-            <span class="visitor-pulse-dot"></span>
-            <span class="visitor-counter-text">Live Visitors:</span>
+            <!-- <span class="visitor-pulse-dot"></span> -->
+            <span class="visitor-counter-text">Visitors:</span>
             <span class="visitor-counter-number"
               id="visitorCounterDisplay">57,896</span>
           </div>
