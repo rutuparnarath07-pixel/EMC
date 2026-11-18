@@ -243,7 +243,7 @@
 }
 
 .expertise-header h2 {
-  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  font-size:2.2rem;
 }
 
 .expertise-header-right {
@@ -769,7 +769,7 @@
 }
 
 .ceo-quote-headline .highlight-orange {
-  color: #F97316 !important;
+  color: #9fd032 !important;
   font-weight: 800 !important;
 }
 
@@ -884,8 +884,13 @@
 
 .presence-title {
   color: #FFFFFF;
-  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  font-size: 2.2rem;
   margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.presence-title span {
+  display: block;
 }
 
 .presence-text {
@@ -1129,7 +1134,7 @@
 }
 
 .iso-section-title {
-  font-size: 1.6rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: var(--navy-text, #0F172A);
   margin-top: 8px;
@@ -1268,7 +1273,6 @@
 }
 
 .presence-grid {
-  grid-template-columns: minmax(220px, 0.5fr) minmax(0, 1.5fr);
   gap: 24px;
   align-items: center;
 }
