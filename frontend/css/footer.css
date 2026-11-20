@@ -204,22 +204,20 @@
 .footer-link.active {
   color: var(--accent-green, #9fd032);
 }
-
 .footer-link:hover::before,
 .footer-link.active::before {
   width: 12px;
   margin-right: 8px;
 }
 
-/* Connect column */
 .footer-tagline {
   margin: 0 0 22px;
-  font-family: var(--font-handwriting, 'Caveat', cursive);
-  font-size: 1.9rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.4rem;
   line-height: 1.15;
   color: #A3E635;
 }
-
 .footer-cta {
   display: flex;
   flex-wrap: wrap;
