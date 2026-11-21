@@ -1,5 +1,3 @@
-/* ===== Shared page-hero / story / metrics ===== */
-
 .page-hero {
   position: relative;
   padding: 60px 0 70px;
@@ -7,14 +5,12 @@
   border-bottom: 1px solid var(--border-color);
   overflow: hidden;
 }
-
 .page-hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: center;
 }
-
 .page-hero-title {
   font-size: clamp(2.25rem, 4.5vw, 3.5rem);
   font-weight: 800;
@@ -23,19 +19,16 @@
   margin-bottom: 16px;
   letter-spacing: -.02em;
 }
-
 .page-hero-title span {
   background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
   -webkit-background-clip: text; 
   -webkit-text-fill-color: transparent;
 }
-
 .page-hero-sub {
   font-size: 1.125rem;
   color: var(--text-body);
   margin-bottom: 24px;
 }
-
 .about-story-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(350px, .8fr);
@@ -200,25 +193,19 @@
   height: 82px;
   padding: 8px 0 0;
 }
-
-/* connector line: starts beside the icon, runs right to the green box */
 .em-item::after {
   content: "";
   position: absolute;
-  top: 22px;               /* vertical centre of the icon */
+  top: 22px;              
   left: 120px;
   right: 0;
   height: 1px;
   background: #A9CF86;
 }
-
-/* first + last lines continue behind the green box to meet the vertical line */
 .em-item:first-child::after,
 .em-item:last-child::after {
   right: -106px;
 }
-
-/* vertical line (right side) joining line 1 down to line 5 */
 .em-item:not(:last-child)::before {
   content: "";
   position: absolute;
@@ -228,9 +215,6 @@
   width: 1px;
   background: #A9CF86;
 }
-
-/* odd rows: line starts at the far left. even rows: whole row (line + text) is
-   shifted right, so the line starts further in - the staggered look of the design */
 .em-item:nth-child(even) {
   margin-left: 150px;
 }
@@ -250,7 +234,16 @@
 }
 
 .em-icon svg {
-  display: block;
+  width: 32px;
+  height: 32px;
+  stroke-width: 3.5;
+}
+
+.em-icon svg path,
+.em-icon svg circle,
+.em-icon svg rect,
+.em-icon svg line {
+  stroke-width: 4.5;
 }
 
 .em-label {
@@ -262,21 +255,20 @@
 
 .em-visual {
   position: relative;
-  margin-top: -120px; /* picture block sits lower, beside the title */
+  margin-top: -120px;
 }
 
 .em-visual-img {
   display: block;
-  width: 58%;              /* picture size */
+  width: 58%;             
   height: auto;
   aspect-ratio: 1 / 1;
   object-fit: contain;
-  margin-left: 27%;        /* keeps the lake circle tucked over the green card */
+  margin-left: 27%;        
   position: relative;
   top: 30px;
 }
 
-/* duplicate of the picture, clipped to the lake circle, drawn above the green card */
 .em-visual-img-top {
   position: absolute;
   top: 30px;
@@ -290,19 +282,17 @@
 
 .em-callout {
   position: absolute;
-  left: -20px; /* nudged left over the end of the list lines */
-  z-index: 3; /* above the picture and the list lines; only the lake circle goes over it */
-  top: 50.1%;              /* % of the picture block, so it scales with the picture */
-  width: 55.7%;            /* runs under the lake circle, out to the pie's edge */
-  height: 53%;             /* bottom lines up with the bottom of the picture */
+  left: -20px; 
+  z-index: 3; 
+  top: 50.1%;              
+  width: 55.7%;            
+  height: 53%;            
   display: flex;
   align-items: center;
   box-sizing: border-box;
   background: #7FB34F;
   color: #FFF;
-  padding: 20px 23.1% 20px 24px;   /* text stays in the part left of the lake circle */
-  /* right/bottom edge follows the curve of the picture, so the green fills the
-     empty wedge of the circle and the photos stay on top (like the design) */
+  padding: 20px 23.1% 20px 24px;   
   clip-path: polygon(0 0, 92.6% 0, 92.6% 67.1%, 81.9% 72.1%, 87.6% 83.3%, 93.1% 93.7%, 97.5% 98.2%, 100% 100%, 0 100%);
 }
 
@@ -347,10 +337,8 @@
     height: auto;
     padding: 16px;
     clip-path: none;
-    z-index: 3; /* on small screens the card stays readable on top */
+    z-index: 3; 
   }
-
-  /* phone/tablet: simple underline per row instead of the bracket */
   .em-item {
     height: auto;
     padding-bottom: 8px;
@@ -382,9 +370,6 @@
     width: 100%;
   }
 }
-
-
-/* ===== Legacy segments / CEO / pillars / advisors ===== */
 
 .seg-1 {
   top: 0;
@@ -632,8 +617,6 @@
   }
 }
 
-/* ===== Old vision/mission statement cards ===== */
-
 .vm-statements-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -756,9 +739,6 @@
     grid-template-columns: 1fr;
   }
 }
-
-/* ===== About hero ===== */
-
 .about-earth-hero {
   position: relative;
   min-height: 440px;
@@ -864,9 +844,6 @@
   flex-shrink: 0;
   color: var(--primary-green);
 }
-
-/* ===== Section helpers ===== */
-
 .about-sec {
   padding: 28px 0;
 }
@@ -896,8 +873,6 @@
   color: var(--text-body);
 }
 
-/* ===== Vision & Mission: two cards (left / right), content left-aligned ===== */
-
 .about-vm-section {
   padding: 24px 0;
 }
@@ -914,7 +889,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;   /* content stays on the left of the card */
+  align-items: flex-start;   
   text-align: left;
   padding: 20px 22px 22px;
   background: #FFF;
@@ -986,7 +961,6 @@
   margin: 0;
 }
 
-/* ===== Core Values icon cards ===== */
 
 .about-values-section {
   background: var(--bg-light);
@@ -1089,8 +1063,6 @@
   margin: 0;
 }
 
-/* ===== Our focus ===== */
-
 .about-focus-strip {
   display: flex;
   gap: 12px;
@@ -1175,8 +1147,6 @@
   margin-top: 10px;
 }
 
-/* ===== Our approach ===== */
-
 .about-approach-section {
   background: var(--bg-light);
 }
@@ -1238,8 +1208,6 @@
   margin: 0;
 }
 
-/* ===== Scroll reveal ===== */
-
 .reveal-init {
   opacity: 0;
   transform: translateY(26px);
@@ -1251,8 +1219,6 @@
   opacity: 1;
   transform: none;
 }
-
-/* ===== What sets us apart ===== */
 
 .about-apart-section {
   position: relative;
@@ -1361,8 +1327,6 @@
 [data-theme="dark"] .about-approach-icon {
   box-shadow: 0 0 0 10px #091124, 0 12px 28px var(--green-glow);
 }
-
-/* ===== Responsive ===== */
 
 @media (max-width: 1024px) {
   .about-vm-journey {
