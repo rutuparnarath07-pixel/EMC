@@ -1,14 +1,9 @@
-/* ==========================================================================
-   ECOMETRIX CONSULTANTS (EMC) - MULTI-LANGUAGE TRANSLATION ENGINE (i18n)
-   ========================================================================== */
-
 const EMC_TRANSLATIONS = {
   en: {
-    // Nav links
     "nav_home": "Home",
     "nav_about": "About Us",
     "nav_services": "Delivery Experience",
-    "nav_our_services": "Our Services",
+    "nav_our_services": "Services",
     "nav_projects": "Projects",
     "nav_insights": "Insights",
     "nav_careers": "Careers",
@@ -17,12 +12,10 @@ const EMC_TRANSLATIONS = {
     "btn_touch": "Get in Touch →",
     "btn_explore": "Explore Our Work →",
 
-    // Hero section
     "hero_badge": "ENGINEERING A BETTER TOMORROW",
     "hero_title": "Sustainable Infrastructure for Healthier Lives",
     "hero_desc": "Ecometrix Consultants Pvt. Ltd. (EMC) is a leading engineering and technical consultancy delivering end-to-end infrastructure development, engineering and project management solutions across India and beyond.",
 
-    // Sectors
     "sectors_title": "EMC 8 Core Sectors",
     "sec_1_title": "Drinking water Supply",
     "sec_1_desc": "24×7 Drink-from-Tap, WTPs & Smart Pipeline Networks",
@@ -41,7 +34,6 @@ const EMC_TRANSLATIONS = {
     "sec_8_title": "Digital Solutions",
     "sec_8_desc": "Custom PPMS, Smart Monitoring & SCADA Dashboards",
 
-    // Preferences & Accessibility
     "pref_title": "Site Preferences & Accessibility",
     "pref_theme": "Theme Mode",
     "pref_light": "Light Mode",
@@ -51,20 +43,18 @@ const EMC_TRANSLATIONS = {
     "pref_font": "Font Size",
     "pref_contrast": "High Contrast Mode",
 
-    // Quick Help
     "quick_help": "Quick Help",
     "quick_help_title": "Quick Help Menu",
 
-    // Footer
     "footer_copy": "© 2026 Ecometrix Consultants Pvt. Ltd. All rights reserved."
   },
 
   hi: {
-    // Nav links
+
     "nav_home": "मुख्य पृष्ठ",
     "nav_about": "हमारे बारे में",
     "nav_services": "डिलीवरी एक्सपीरियंस",
-    "nav_our_services": "हमारी सेवाएँ",
+    "nav_our_services": "सेवाएँ",
     "nav_projects": "परियोजनाएं",
     "nav_insights": "अंतर्दृष्टि",
     "nav_careers": "करियर",
@@ -73,12 +63,11 @@ const EMC_TRANSLATIONS = {
     "btn_touch": "संपर्क करें →",
     "btn_explore": "हमारे कार्य देखें →",
 
-    // Hero section
+
     "hero_badge": "बेहतर कल के लिए इंजीनियरिंग",
     "hero_title": "स्वस्थ जीवन के लिए सतत अवसंरचना",
     "hero_desc": "इकोमेट्रिक्स कंसल्टेंट्स प्राइवेट लिमिटेड (EMC) पूरे भारत और उससे आगे संपूर्ण बुनियादी ढांचा विकास, इंजीनियरिंग और परियोजना प्रबंधन समाधान प्रदान करने वाली अग्रणी तकनीकी परामर्शदाता संस्था है।",
 
-    // Sectors
     "sectors_title": "ईएमसी के 8 प्रमुख क्षेत्र",
     "sec_1_title": "पेयजल आपूर्ति",
     "sec_1_desc": "24×7 नल से जल, जल शोधन संयंत्र एवं स्मार्ट पाइपलाइन नेटवर्क",
@@ -97,7 +86,6 @@ const EMC_TRANSLATIONS = {
     "sec_8_title": "डिजिटल समाधान",
     "sec_8_desc": "कस्टम पीपीएमएस, स्मार्ट मॉनिटरिंग एवं स्काडा डैशबोर्ड",
 
-    // Preferences & Accessibility
     "pref_title": "साइट प्राथमिकताएं एवं सुगमता",
     "pref_theme": "थीम मोड",
     "pref_light": "लाइट मोड",
@@ -107,20 +95,17 @@ const EMC_TRANSLATIONS = {
     "pref_font": "फ़ॉन्ट का आकार",
     "pref_contrast": "उच्च कंट्रास्ट मोड",
 
-    // Quick Help
     "quick_help": "त्वरित सहायता",
     "quick_help_title": "त्वरित सहायता मेनू",
 
-    // Footer
     "footer_copy": "© 2026 इकोमेट्रिक्स कंसल्टेंट्स प्राइवेट लिमिटेड। सर्वाधिकार सुरक्षित।"
   },
 
   od: {
-    // Nav links
     "nav_home": "ମୁଖ୍ୟ ପୃଷ୍ଠା",
     "nav_about": "ଆମ ବିଷୟରେ",
     "nav_services": "ଡେଲିଭରି ଏକ୍ସପେରିଏନ୍ସ",
-    "nav_our_services": "ଆମର ସେବା",
+    "nav_our_services": "ସେବା",
     "nav_projects": "ପ୍ରକଳ୍ପସମୂହ",
     "nav_insights": "ଅନ୍ତର୍ଦୃଷ୍ଟି",
     "nav_careers": "କ୍ୟାରିଅର୍",
@@ -172,13 +157,11 @@ const EMC_TRANSLATIONS = {
   }
 };
 
-/* Translation Execution Engine */
 function applyLanguageTranslation(lang) {
   const dict = EMC_TRANSLATIONS[lang] || EMC_TRANSLATIONS['en'];
   localStorage.setItem('emc_language', lang);
   document.documentElement.setAttribute('lang', lang);
 
-  // Translate elements with data-i18n attribute
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (dict[key]) {
@@ -190,7 +173,7 @@ function applyLanguageTranslation(lang) {
     }
   });
 
-  // Dynamic automatic translation of key static text strings across the page
+
   const textReplacements = [
     { selector: '.nav-link[href*="index.html"]', key: 'nav_home' },
     { selector: '.nav-link[href*="about.html"]', key: 'nav_about' },
@@ -210,7 +193,6 @@ function applyLanguageTranslation(lang) {
   textReplacements.forEach(item => {
     document.querySelectorAll(item.selector).forEach(node => {
       if (dict[item.key]) {
-        // Keep child HTML icons if present
         if (node.children.length === 0) {
           node.textContent = dict[item.key];
         }
@@ -218,7 +200,6 @@ function applyLanguageTranslation(lang) {
     });
   });
 
-  // Update UI flags and indicators
   const flags = { en: '🇬🇧', hi: '🇮🇳', od: '🇮🇳' };
   const codes = { en: 'EN', hi: 'HI', od: 'OD' };
   const names = { en: 'English', hi: 'हिन्दी', od: 'ଓଡ଼ିଆ' };
@@ -227,7 +208,6 @@ function applyLanguageTranslation(lang) {
   document.querySelectorAll('.current-lang-flag').forEach(el => el.textContent = flags[lang] || '🇬🇧');
   document.querySelectorAll('.current-lang-name').forEach(el => el.textContent = names[lang] || 'English');
 
-  // Highlight active lang option buttons
   document.querySelectorAll('.lang-opt-btn').forEach(btn => {
     if (btn.getAttribute('data-lang') === lang) {
       btn.classList.add('active');
@@ -237,7 +217,6 @@ function applyLanguageTranslation(lang) {
   });
 }
 
-// Auto-run translation on load
 document.addEventListener('DOMContentLoaded', () => {
   const savedLang = localStorage.getItem('emc_language') || 'en';
   applyLanguageTranslation(savedLang);
