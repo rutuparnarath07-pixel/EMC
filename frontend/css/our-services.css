@@ -24,7 +24,7 @@
 .os-services .container > .os-block:first-child { border-top: 0; padding-top: 56px; }
 .os-block.reverse .os-media { order: 2; }
 .os-media img { width: 100%; display: block; border-radius: var(--radius-lg); aspect-ratio: 16/10; object-fit: cover; box-shadow: var(--shadow-lg); }
-.os-title { font-size: 2.2rem; font-weight: 800; color: var(--navy-text); margin-bottom: 22px; letter-spacing: -0.01em; }
+.os-title { font-size: 2rem; font-weight: 800; color: var(--navy-text); margin-bottom: 22px; letter-spacing: -0.01em; }
 .os-title::after { content: ""; display: block; width: 64px; height: 4px; border-radius: 3px; background: var(--primary-green); margin-top: 12px; }
 .os-chips { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; }
 .os-chips li {
