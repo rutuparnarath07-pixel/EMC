@@ -1054,8 +1054,6 @@
           <p class="presence-text">10 regional offices operating around 20
             States and UTs in India with an emerging international
             footprint.</p>
-          <a href="contact.html" class="btn btn-outline-white">Discover More
-            →</a>
         </div>
 
         <div class="presence-map-stage">
@@ -1334,7 +1332,7 @@
       <div class="container">
         <div class="iso-section-header">
           <div class="section-badge">QUALITY & COMPLIANCE</div>
-          <h3 class="iso-section-title">Accredited ISO Certifications by EMC </h3>
+          <h3 class="iso-section-title">Accredited ISO Certifications  </h3>
         </div>
 
         <div class="iso-marquee-wrapper">
@@ -1794,6 +1792,51 @@ href="mailto:info@ecometrix.co.in">info@ecometrix.co.in</a>
       document.getElementById('imModalClose').addEventListener('click', close);
       modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
       document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('active')) close(); });
+    })();
+    </script>
+    <!-- SPV banner: image ke hisse ek-ek karke left se right aate hain -->
+    <script>
+    (function () {
+      var hero = document.querySelector('.spv-section .spv-hero');
+      var img = hero && hero.querySelector('.spv-hero-img');
+      var box = hero && hero.querySelector('.spv-hero-right');
+      if (!hero || !img || !box) return;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      /* image ke 4 hisse (left % se right %) */
+      var cuts = [[0, 26.5], [26.5, 51.5], [51.5, 76], [76, 100]];
+
+      function build() {
+        var src = img.currentSrc || img.src;
+        cuts.forEach(function (c, i) {
+          var s = document.createElement('div');
+          s.className = 'spv-slice';
+          s.style.setProperty('--i', i);
+          s.style.backgroundImage = 'url("' + src + '")';
+          s.style.clipPath = 'inset(0 ' + (100 - c[1]) + '% 0 ' + c[0] + '%)';
+          box.insertBefore(s, img.nextSibling);
+        });
+        hero.classList.add('spv-anim-ready');
+
+        var play = function () {
+          hero.classList.add('spv-anim-play');
+          setTimeout(function () { hero.classList.add('spv-anim-done'); }, 2700);
+        };
+
+        if ('IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) { play(); io.disconnect(); }
+            });
+          }, { threshold: 0.35 });
+          io.observe(hero);
+        } else {
+          play();
+        }
+      }
+
+      if (img.complete && img.naturalWidth) build();
+      else img.addEventListener('load', build, { once: true });
     })();
     </script>
   </body>
