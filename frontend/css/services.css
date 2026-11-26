@@ -383,3 +383,197 @@
     transform: none;
   }
 }
+
+/* =========================================================
+   MEGA MENU (Delivery Experience dropdown)
+   ========================================================= */
+
+.site-header .nav-item-has-mega {
+  position: relative;
+}
+
+.site-header .nav-item-has-mega .mega-menu-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 1000;
+  width: 620px;
+  max-width: calc(100vw - 32px);
+  padding: 20px;
+  margin-top: 14px;
+  display: block;
+  background: #FFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  box-shadow: 0 24px 48px rgba(15, 30, 41, .14), 0 4px 12px rgba(15, 30, 41, .06);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 10px);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s;
+}
+
+/* hover gap bridge – mouse le jaate waqt menu band na ho */
+.site-header .nav-item-has-mega .mega-menu-dropdown::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -16px;
+  height: 16px;
+}
+
+/* chhota arrow upar */
+.site-header .nav-item-has-mega .mega-menu-dropdown::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background: #FFF;
+  border-left: 1px solid #E2E8F0;
+  border-top: 1px solid #E2E8F0;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.site-header .nav-item-has-mega:hover .mega-menu-dropdown,
+.site-header .nav-item-has-mega:focus-within .mega-menu-dropdown,
+.site-header .nav-item-has-mega.open .mega-menu-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+/* right side wala "Advisory & Consultancy" box – poori tarah hide */
+.site-header .mega-menu-sidebar,
+.mega-menu-dropdown .mega-menu-sidebar {
+  display: none !important;
+}
+
+.site-header .nav-item-has-mega .mega-menu-dropdown {
+  grid-template-columns: 1fr !important;
+}
+
+/* label: "EMC 8 Core Sectors" */
+.site-header .mega-menu-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 4px 14px;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--primary-green, #5B9423);
+}
+
+.site-header .mega-menu-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #E2E8F0;
+}
+
+/* grid: 2 column */
+.site-header .mega-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.site-header .mega-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.site-header .mega-menu-item:hover,
+.site-header .mega-menu-item:focus-visible {
+  background: #F2F8EC;
+  border-color: #D9EBC7;
+  transform: translateX(3px);
+  outline: none;
+}
+
+.site-header .mega-menu-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  line-height: 1;
+  background: #EEF6E6;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.site-header .mega-menu-item:hover .mega-menu-icon {
+  background: #FFF;
+  transform: scale(1.06);
+}
+
+.site-header .mega-menu-title {
+  font-size: .88rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--navy-text, #0F172A);
+  white-space: nowrap;
+}
+
+.site-header .mega-menu-item:hover .mega-menu-title {
+  color: var(--primary-green, #5B9423);
+}
+
+.site-header .mega-menu-desc {
+  margin-top: 2px;
+  font-size: .76rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--text-muted, #64748B);
+}
+
+/* dark mode */
+[data-theme="dark"] .site-header .nav-item-has-mega .mega-menu-dropdown,
+[data-theme="dark"] .site-header .nav-item-has-mega .mega-menu-dropdown::after {
+  background: #0F1E29;
+  border-color: rgba(255, 255, 255, .12);
+}
+
+[data-theme="dark"] .site-header .mega-menu-item:hover {
+  background: rgba(159, 208, 50, .1);
+  border-color: rgba(159, 208, 50, .25);
+}
+
+[data-theme="dark"] .site-header .mega-menu-icon {
+  background: rgba(159, 208, 50, .14);
+}
+
+[data-theme="dark"] .site-header .mega-menu-title {
+  color: #FFF;
+}
+
+[data-theme="dark"] .site-header .mega-menu-label::after {
+  background: rgba(255, 255, 255, .12);
+}
+
+/* tablet/mobile: mega menu nahi (mobile drawer use hota hai) */
+@media (max-width: 1024px) {
+  .site-header .nav-item-has-mega .mega-menu-dropdown {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .nav-item-has-mega .mega-menu-dropdown,
+  .site-header .mega-menu-item,
+  .site-header .mega-menu-icon {
+    transition: none;
+  }
+}
