@@ -1,7 +1,3 @@
-/* ==========================================================================
-   OUR SERVICES INTERACTIVE MODULE & DETAIL MODAL HANDLER
-   ========================================================================== */
-
 const SVG_ICONS = {
   search: `<svg width="20" height="20" fill="none" stroke="var(--primary-green)" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>`,
   gear: `<svg width="20" height="20" fill="none" stroke="var(--primary-green)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15a3 3 0 100-6 3 3 0 000 6z"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>`,
@@ -32,14 +28,10 @@ const SVG_ICONS = {
   sun: `<svg width="20" height="20" fill="none" stroke="var(--primary-green)" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`
 };
 
-
-/* State outline maps. A KPI whose number is a state name ("Odisha", "Assam"),
-   or that has  states: ["odisha","assam","tamilnadu"],  shows the map(s) inside the KPI card.
-   Optional per map:  viewBox (default "0 0 100 100")  and  stroke (default 3). */
 const STATE_MAPS = {
   odisha: { name: "Odisha", path: "M44.7 27.4C45.1 27.1 47.0 26.0 47.6 25.8C48.3 25.6 50.8 25.1 51.6 25.1C52.3 25.1 55.3 25.5 56.0 25.8C56.6 26.0 57.9 27.6 58.4 27.9C59.0 28.2 61.3 29.0 61.9 28.9C62.5 28.9 64.2 27.7 64.8 27.4C65.4 27.0 67.6 25.4 68.2 25.3C68.9 25.1 71.1 25.5 71.7 25.8C72.2 26.0 73.8 27.4 74.1 27.9C74.5 28.3 75.2 30.1 75.6 30.5C76.0 30.8 77.6 31.2 78.0 31.5C78.5 31.8 80.0 33.2 80.0 33.6C80.0 34.1 79.0 36.0 78.5 36.2C78.1 36.5 75.5 36.3 75.1 36.8C74.7 37.2 74.7 40.3 74.6 41.0C74.5 41.6 74.3 43.5 74.1 44.1C73.9 44.7 72.4 46.7 72.2 47.2C71.9 47.7 71.5 49.0 71.2 49.3C70.8 49.7 68.8 50.5 68.2 50.9C67.7 51.2 65.9 52.6 65.3 53.0C64.7 53.4 62.4 54.8 61.9 55.1C61.4 55.4 60.4 55.8 59.9 56.1C59.4 56.4 57.5 57.9 57.0 58.2C56.5 58.6 54.9 59.4 54.5 59.8C54.1 60.1 53.0 61.5 52.5 61.9C52.1 62.3 50.6 63.7 50.1 64.0C49.5 64.2 47.4 64.6 46.7 64.5C46.0 64.4 43.4 63.1 42.7 62.9C42.1 62.7 40.3 62.2 39.8 62.4C39.3 62.6 38.3 64.5 37.8 65.0C37.3 65.5 35.1 67.7 34.4 68.1C33.8 68.6 31.6 69.5 31.0 69.7C30.3 69.9 28.1 69.9 27.5 70.2C27.0 70.6 25.2 72.9 24.6 73.4C24.1 73.8 22.1 75.1 21.7 74.9C21.2 74.8 20.0 72.5 20.0 71.8C20.0 71.1 20.8 67.8 21.2 67.1C21.6 66.4 23.6 64.6 24.1 64.0C24.6 63.4 26.1 61.4 26.6 60.8C27.0 60.3 28.7 58.9 29.0 58.2C29.3 57.5 29.6 54.3 29.5 53.5C29.4 52.7 28.3 50.4 28.0 49.8C27.8 49.3 26.9 48.2 27.1 47.8C27.2 47.3 29.4 45.1 30.0 44.6C30.6 44.1 33.4 42.6 33.9 42.0C34.5 41.4 35.5 38.5 35.9 37.8C36.3 37.1 37.8 35.3 38.3 34.7C38.8 34.1 40.8 32.1 41.3 31.5C41.7 31.0 42.9 29.3 43.2 28.9C43.6 28.5 44.3 27.6 44.7 27.4Z" },
   assam:  { name: "Assam",  path: "M20.0 49.9C20.1 49.0 20.5 45.8 21.0 44.9C21.5 44.0 24.1 40.7 25.0 40.4C25.9 40.1 29.9 41.5 31.0 41.5C32.1 41.6 35.6 41.1 36.5 41.0C37.4 40.8 40.2 40.2 41.0 40.1C41.8 40.0 44.7 39.7 45.5 39.5C46.3 39.4 49.1 38.7 50.0 38.8C50.9 38.8 54.1 40.1 55.0 40.1C55.9 40.1 59.2 39.2 60.0 38.8C60.8 38.3 63.3 35.4 64.0 34.9C64.7 34.3 66.8 33.0 67.5 32.6C68.2 32.3 71.2 31.1 72.0 30.7C72.8 30.4 75.8 28.8 76.5 29.0C77.2 29.1 79.8 31.9 80.0 32.6C80.2 33.3 79.4 36.0 79.0 36.5C78.6 37.1 76.0 37.8 75.5 38.2C75.0 38.6 73.9 40.4 73.5 41.0C73.1 41.6 72.1 44.0 71.5 44.3C70.9 44.7 68.2 45.0 67.5 44.9C66.8 44.8 65.1 43.1 64.5 43.2C63.9 43.4 61.9 45.9 61.5 46.5C61.1 47.2 60.9 50.0 60.5 50.4C60.1 50.9 58.0 50.7 57.5 51.0C57.0 51.3 55.3 53.2 55.0 53.8C54.7 54.4 54.0 57.0 54.0 57.7C54.0 58.4 54.6 60.8 54.5 61.6C54.4 62.4 53.4 65.4 53.0 66.0C52.6 66.7 50.6 67.8 50.0 68.3C49.4 68.7 47.5 70.2 47.0 70.5C46.5 70.7 44.8 71.3 44.5 71.0C44.2 70.7 43.5 67.9 43.5 67.1C43.5 66.4 44.5 63.3 44.5 62.7C44.5 62.1 43.4 60.8 43.0 60.5C42.6 60.2 41.1 59.5 40.5 59.4C39.9 59.2 37.7 59.4 37.0 59.4C36.3 59.3 34.2 58.7 33.5 58.8C32.8 58.8 30.3 59.9 29.5 59.9C28.7 60.0 25.7 59.5 25.0 59.4C24.3 59.2 22.0 58.7 21.5 58.2C21.0 57.8 20.1 55.7 20.0 54.9C19.9 54.1 19.9 50.8 20.0 49.9Z" },
-  /* Tamil Nadu (Chennai) - real outline, drawn in its own coordinate box so it fits the same tile size */
+
   tamilnadu: {
     name: "Tamil Nadu",
     viewBox: "132.8 506.7 165 165",
@@ -48,9 +40,8 @@ const STATE_MAPS = {
   }
 };
 
-/* Map tile size (px). Increase these two numbers to make the maps even bigger. */
-const MAP_TILE_PX = 72;   // white rounded box
-const MAP_SVG_PX  = 64;   // the state outline inside the box
+const MAP_TILE_PX = 72;   
+const MAP_SVG_PX  = 64;  
 
 function mapTileHtml(key) {
   const m = STATE_MAPS[key];
@@ -61,20 +52,10 @@ function mapTileHtml(key) {
   </div>`;
 }
 
-
-/* ==========================================================================
-   COUNT-UP NUMBERS
-   Numbers like "40+", "8M+", "₹6,000 Cr", "3,000+ km", "1.5M+", "500+ sq. km"
-   count from 0 up to their value when the modal opens.
-   Text values ("Pan-India", "JICA", "24×7", "NH-26 & NH-59", "4-Lane" ...)
-   are NOT counted - they are shown as they are.
-   ========================================================================== */
-
 const COUNT_DURATION_MS = 1800;
 
 function parseCountable(str) {
   const s = String(str).trim();
-  // [₹] number [M|K] [+] [ Cr | km | sq. km]
   const m = s.match(/^(₹)?(\d[\d,]*(?:\.\d+)?)([MK])?(\+)?(?:\s(Cr|km|sq\. km))?$/);
   if (!m) return null;
   const numStr = m[2];
@@ -95,14 +76,12 @@ function formatCount(value, decimals, comma) {
   return decimals ? value.toFixed(decimals) : String(Math.round(value));
 }
 
-/* Returns the HTML for a number. Countable numbers become a <span class="kpi-count"> that starts at 0. */
 function countNumberHtml(str) {
   const p = parseCountable(str);
   if (!p) return str;
   return `<span class="kpi-count" aria-label="${str}" data-target="${p.target}" data-decimals="${p.decimals}" data-comma="${p.comma ? 1 : 0}" data-prefix="${p.prefix}" data-suffix="${p.suffix}">${p.prefix}${formatCount(0, p.decimals, p.comma)}${p.suffix}</span>`;
 }
 
-/* Runs the count-up on every not-yet-started .kpi-count in the page (i.e. the open modal). */
 function animateCounts(root) {
   const scope = root || document;
   const els = scope.querySelectorAll('.kpi-count:not([data-started])');
@@ -123,31 +102,25 @@ function animateCounts(root) {
     const start = performance.now() + delay;
 
     function tick(now) {
-      if (!el.isConnected) return;                       // modal closed
+      if (!el.isConnected) return;                      
       const t = Math.min(Math.max((now - start) / COUNT_DURATION_MS, 0), 1);
-      const eased = 1 - Math.pow(1 - t, 3);              // ease-out
+      const eased = 1 - Math.pow(1 - t, 3);              
       el.textContent = prefix + formatCount(target * eased, decimals, comma) + suffix;
       if (t < 1) requestAnimationFrame(tick);
-      else el.textContent = finalText;                   // exact final value
+      else el.textContent = finalText;                   
     }
     requestAnimationFrame(tick);
   });
 }
 
-
-/* One KPI tile.
-   - Normal            = number + label
-   - With state map(s) = map(s) on the left, text on the right
-   - With  lines: [...]  = a small list (e.g. "Sambalpur – Odisha") instead of a big number */
 function kpiTileHtml(k) {
-  const keys = k.states || (STATE_MAPS[String(k.number).trim().toLowerCase()] ? [String(k.number).trim().toLowerCase()] : []);
+  const keys = k.states || (STATE_MAPS[String(k.number).trim().toLowerCase()] && !k.noMap ? [String(k.number).trim().toLowerCase()] : []);
   const maps = keys.filter(x => STATE_MAPS[x]).map(mapTileHtml).join('');
 
   const labelHtml = `<div style="font-size:0.625rem; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.4px; margin-top:${k.lines ? '6px' : '3px'};">${k.label}</div>`;
 
   let main;
   if (k.lines) {
-    // Same green + bold as the other KPI numbers
     main = k.lines.map(line =>
       `<div style="font-size:0.9375rem; font-weight:800; line-height:1.5; color:var(--primary-green);">${line}</div>`
     ).join('');
@@ -159,27 +132,17 @@ function kpiTileHtml(k) {
   const inner = maps
     ? `<div style="display:flex; align-items:center; flex-wrap:wrap; gap:14px;"><div style="display:flex; gap:8px;">${maps}</div>${text}</div>`
     : text;
-  // A tile with maps spans the full row so the bigger maps have room
+
   const span = maps ? 'grid-column:1 / -1;' : '';
   const pad = maps ? '12px 14px' : '8px 12px';
   return `<div style="${span} background:var(--light-green-bg); border-radius:var(--radius-sm); padding:${pad}; text-align:left; min-width:0;">${inner}</div>`;
 }
 
-/* ==========================================================================
-   SERVICES DATA
-   IMAGES: every image path below matches the cards in services.html
-   ========================================================================== */
-/* ==========================================================================
-   >>> STORMWATER & GIS IMAGES: CHANGE ONLY HERE <<<
-   Yahan file ka naam badlo - card (services page) aur popup (modal) dono mein
-   wahi image aayegi. File "assets/" folder mein honi chahiye (naam exact same,
-   capital letters aur spaces ke saath).
-   IMAGE_VERSION badalne se browser ki purani cached image nahi dikhti.
-   ========================================================================== */
+
 const IMAGE_VERSION = "2";
 const SERVICE_IMAGES = {
-  stormwater: "assets/StormWater Drainage.png",   // <-- Stormwater image
-  gis:        "assets/GIS option 2.png"           // <-- GIS image
+  stormwater: "assets/StormWater Drainage.png", 
+  gis:"assets/GIS option 2.png"           
 };
 function imgPath(path) { return encodeURI(path) + "?v=" + IMAGE_VERSION; }
 
@@ -190,7 +153,6 @@ const SERVICES_DATA = [
     title: "Drinking Water Supply",
     subtitle: "Reliable, Inclusive and Sustainable Water Supply Solutions",
     image: "assets/Water%20Supply%20website.png",
-    quote: "Safe water. Healthier communities. Stronger cities.",
     description: "We provide end-to-end consultancy services for planning, design, implementation and management of water supply systems. Our solutions are tailored to ensure safe, reliable and equitable water access for urban and rural communities.",
     capabilities: [
       { title: "Source Assessment & Feasibility Studies", icon: SVG_ICONS.search },
@@ -255,7 +217,6 @@ const SERVICES_DATA = [
     title: "Used Water Management",
     subtitle: "Sewerage, Wastewater Treatment and Reuse Solutions",
     image: "assets/Used%20Water%20Mgmt.png",
-    quote: "Turning wastewater challenges into sustainable resource cycles.",
     description: "Comprehensive engineering consultancy for sewerage systems, modern sewage treatment plants (STP), fecal sludge management, and treated water recycling infrastructure.",
     capabilities: [
       { title: "Sewerage Master Planning", icon: SVG_ICONS.map },
@@ -305,7 +266,6 @@ const SERVICES_DATA = [
     title: "Stormwater & Flood Management",
     subtitle: "Sustainable Drainage Solutions for Climate-Resilience",
     image: "assets/Stormwater.png",
-    quote: "Protecting urban assets and saving lives through climate drainage.",
     description: "Integrated urban flood risk assessment, storm drainage master planning, retention basin design, and sponge city blue-green infrastructure.",
     capabilities: [
       { title: "Hydrological & Hydraulic Modelling", icon: SVG_ICONS.wave },
@@ -342,7 +302,6 @@ const SERVICES_DATA = [
     title: "Urban Planning",
     subtitle: "Strategic Master Plans, City Action Plans and Integrated Urban Development",
     image: "assets/Urban%20Planning.png",
-    quote: "Creating vibrant, livable cities engineered for growth.",
     description: "Strategic master planning, PMAY city action plans and integrated urban development initiatives that improve living conditions across cities and regions.",
     capabilities: [
       { title: "City Master Development Plans", icon: SVG_ICONS.city },
@@ -386,7 +345,6 @@ const SERVICES_DATA = [
     title: "Urban Development & Civic Infrastructure",
     subtitle: "Waterfronts, Civic Buildings and Community Infrastructure",
     image: "assets/Urban%20Development.png",
-    quote: "Creating public spaces that bring communities together.", // placeholder - replace with your own
     description: "DPR and PMC services for water body rejuvenation, civic and public buildings, and sports and community facilities that improve everyday urban life.",
     capabilities: [],
     programs: [
@@ -417,7 +375,6 @@ const SERVICES_DATA = [
     title: "GIS & Spatial Intelligence",
     subtitle: "Evidence-Based Decision Support Platforms and Asset Mapping",
     image: "assets/GIS option 1.png",
-    quote: "Transforming location data into strategic engineering intelligence.",
     description: "Enterprise GIS implementation, drone survey asset mapping, satellite image processing, and custom WebGIS governance portals.",
     capabilities: [
       { title: "Drone Survey & Orthomosaic Mapping", icon: SVG_ICONS.search },
@@ -462,7 +419,6 @@ const SERVICES_DATA = [
     title: "Transportation",
     subtitle: "Safe, Efficient and Sustainable Transport Systems",
     image: "assets/Transportation.png",
-    quote: "Connecting communities with seamless, safe transit infrastructure.",
     description: "Highway engineering, urban corridor revitalization, junction improvement, non-motorized transport (NMT) tracks, and traffic impact studies.",
     capabilities: [
       { title: "Corridor & Highway Design", icon: SVG_ICONS.road },
@@ -475,7 +431,7 @@ const SERVICES_DATA = [
         text: "Feasibility studies and budgeting for bypass development at Bhawanipatna and Titlagarh.",
         kpis: [
           { number: "NH-26 & NH-59", label: "Highways" },
-          { number: "Odisha", label: "State" }
+          { number: "Odisha", label: "State", noMap: true }
         ]
       },
       {
@@ -492,7 +448,7 @@ const SERVICES_DATA = [
         text: "DPR for road construction under the Rural Development Department, supporting improved regional connectivity.",
         kpis: [
           { number: "Jaraka, Jajpur", label: "Location" },
-          { number: "Odisha", label: "State" }
+          { number: "Odisha", label: "State", noMap: true }
         ]
       }
     ],
@@ -504,7 +460,6 @@ const SERVICES_DATA = [
     title: "Digital Solutions",
     subtitle: "Technology-Enabled Solutions for Smart Governance",
     image: "assets/Digital%20Solutions.png",
-    quote: "Empowering infrastructure governance with real-time digital tools.",
     description: "Custom enterprise Web & Mobile applications, IoT sensor integrations for water monitoring, and executive decision-support dashboards.",
     capabilities: [
       { title: "IoT Utility Monitoring Dashboards", icon: SVG_ICONS.chart },
@@ -546,7 +501,6 @@ const SERVICES_DATA = [
     title: "Environmental & Social Development",
     subtitle: "Environmental Impact Assessment and Community Action",
     image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
-    quote: "Integrating ecological balance and social equity into development.",
     description: "EIA reports, environmental management plans (EMP), resettlement & rehabilitation frameworks, and stakeholder capacity building.",
     capabilities: [
       { title: "Environmental Impact Assessment (EIA)", icon: SVG_ICONS.leaf },
@@ -581,7 +535,6 @@ function findServiceForCard(card) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Bind click event to service cards or "Learn More" links
   document.querySelectorAll('.service-card, [data-service-id]').forEach(card => {
     card.addEventListener('click', (e) => {
       e.preventDefault();
@@ -599,15 +552,12 @@ function openServiceModal(service) {
     </div>
   `).join('');
 
-  // Key Capabilities: hidden for services that have `programs` (KPI cards replace it)
   const capabilitiesSection = service.programs ? '' : `
         <div style="font-size:0.75rem; font-weight:700; color:var(--primary-green); text-transform:uppercase; margin-bottom:12px;">KEY CAPABILITIES</div>
         <div class="service-capabilities-grid">${capabilitiesHtml}</div>`;
 
-  // Heading above the program cards. Change this text anytime, or set `programsHeading` on a service.
   const programsHeading = service.programsHeading || 'Our Work & Impact';
 
-  // Program blocks: accent bar + title + text, then KPI tiles (big number, label below)
   const programsHtml = (service.programs || []).map(p => `
     <div style="margin-bottom:10px; padding:12px 16px; background:#fff; border:1px solid #e5e7eb; border-left:4px solid var(--primary-green); border-radius:var(--radius-sm); box-shadow:0 1px 3px rgba(0,0,0,0.04);">
       <div style="font-weight:800; font-size:0.9375rem; color:var(--navy-text); margin-bottom:2px;">${p.title}</div>
@@ -655,15 +605,12 @@ function openServiceModal(service) {
 
         ${statsBox}
 
-        <a href="contact.html" class="btn btn-primary" onclick="window.emcModal.close()">Discuss Your Project →</a>
       </div>
     </div>
   `;
 
   window.emcModal.open(modalHtml);
 
-  // Start the count-up once the modal content is in the page.
-  // Second call is a safety net in case the modal inserts its HTML a little late.
   setTimeout(() => animateCounts(document), 60);
   setTimeout(() => animateCounts(document), 350);
 }
