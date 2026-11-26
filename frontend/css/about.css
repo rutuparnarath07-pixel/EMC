@@ -1008,7 +1008,6 @@
 
 /* number 01, 02 ... */
 .about-value-item::after {
-  content: counter(value, decimal-leading-zero);
   position: absolute;
   top: 12px;
   right: 16px;
