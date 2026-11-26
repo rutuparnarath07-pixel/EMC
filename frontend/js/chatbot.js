@@ -1,7 +1,3 @@
-/* ==========================================================================
-   EMC Chatbot - mascot launcher, chat window, quick-help tab, forms
-   Works with: css/chatbot.css  and  backend  POST /api/chat
-   ========================================================================== */
 (function () {
   'use strict';
   if (window.__emcChatbotLoaded) return;
@@ -9,19 +5,17 @@
 
   var API = '/api';
   var MASCOT = 'assets/images/mascot.png';
-  var QUICK_START = ['Company Info', 'Our Services', 'Apply for Job / Upload CV', 'Schedule Visit / Meeting'];
+  var QUICK_START = ['Company Info', 'Services', 'Apply for Job / Upload CV', 'Schedule Visit / Meeting'];
 
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   }
-  // very small markdown: **bold** and new lines (input is escaped first)
   function fmt(s) {
     return esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
   }
 
-  /* ---------- build DOM ---------- */
   var root = document.createElement('div');
   root.innerHTML =
     '<div class="emc-kiit-quick-help-tab" id="emcQhTab" role="button" tabindex="0" aria-label="Quick help">' +
@@ -29,7 +23,7 @@
     '<div class="emc-quickhelp-modal" id="emcQhModal">' +
       '<div class="emc-quickhelp-header"><div class="emc-quickhelp-title">⚡ Quick Help</div>' +
       '<button class="emc-quickhelp-close" id="emcQhClose" aria-label="Close">✕</button></div>' +
-      '<a class="emc-quickhelp-item" href="our-services.html"><span class="icon">🛠️</span> Our Services</a>' +
+      '<a class="emc-quickhelp-item" href="our-services.html"><span class="icon">🛠️</span> Services</a>' +
       '<a class="emc-quickhelp-item" href="careers.html"><span class="icon">💼</span> Careers</a>' +
       '<a class="emc-quickhelp-item" href="contact.html"><span class="icon">📞</span> Contact Us</a>' +
       '<a class="emc-quickhelp-item" href="about.html"><span class="icon">🏢</span> About EMC</a>' +
@@ -57,7 +51,6 @@
   var win = $('emcChatWin'), msgs = $('emcMsgs'), input = $('emcInput');
   var started = false;
 
-  /* ---------- helpers ---------- */
   function scrollDown() { msgs.scrollTop = msgs.scrollHeight; }
 
   function addMsg(who, html) {
@@ -91,7 +84,6 @@
     msgs.querySelectorAll('.emc-chat-options').forEach(function (n) { n.remove(); });
   }
 
-  /* ---------- offline fallback (if backend not reachable) ---------- */
   function localReply(text) {
     var t = text.toLowerCase();
     if (/job|career|cv|resume|apply/.test(t))
@@ -103,7 +95,6 @@
     return { response: 'Ecometrix Consultants provides engineering, environmental consulting and infrastructure services across India. How can I help?', options: QUICK_START };
   }
 
-  /* ---------- main flow ---------- */
   function handle(text) {
     text = (text || '').trim();
     if (!text) return;
@@ -124,7 +115,6 @@
       });
   }
 
-  /* ---------- forms ---------- */
   function showForm(kind) {
     var isJob = kind === 'job';
     var f = document.createElement('form');
@@ -177,7 +167,6 @@
     return '<div class="emc-form-field"><label>' + label + '</label>' + inner + '</div>';
   }
 
-  /* ---------- open / close ---------- */
   function openChat() {
     win.classList.add('open');
     $('emcBubble').style.display = 'none';
@@ -198,7 +187,6 @@
     if (e.key === 'Enter') { var t = input.value; input.value = ''; handle(t); }
   });
 
-  /* quick help drawer */
   var qh = $('emcQhModal');
   $('emcQhTab').addEventListener('click', function () { qh.classList.toggle('open'); });
   $('emcQhClose').addEventListener('click', function () { qh.classList.remove('open'); });
@@ -206,8 +194,7 @@
     if (e.key === 'Escape') { closeChat(); qh.classList.remove('open'); }
   });
 
-  /* rotating speech-bubble text */
-  var tips = ['Hi! Need help?', 'Ask about our services', 'Apply for a job here'], i = 0;
+  var tips = ['Hi! Need help?', 'Ask about services', 'Apply for a job here'], i = 0;
   setInterval(function () {
     if (win.classList.contains('open')) return;
     i = (i + 1) % tips.length;
