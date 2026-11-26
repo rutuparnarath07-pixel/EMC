@@ -1,67 +1,336 @@
+/* =========================================================
+   SPV BANNER – "Engineering 24×7 Drink From Tap Water Systems"
+   Image right side me poori, left side black se gradient hoke
+   image me mil jaye. Button image ke upar.
+   ========================================================= */
 
 .spv-section {
   background: #fff;
   padding: 36px 0 32px;
 }
 
-.spv-hero {
+.spv-section .spv-hero {
   position: relative;
+  display: flex;
+  align-items: stretch;
+  min-height: 0;
+  padding: 0;
   overflow: hidden;
-  display: grid;
-  grid-template-columns: 1.15fr .85fr;
-  align-items: center;
-  gap: 20px;
-  padding: 26px 40px;
+  isolation: isolate;
+  /* left se black -> grey, aage image ke saath mil jaata hai */
+  background: linear-gradient(90deg, #0a0a0a 0%, #1c1e21 15%, #33363b 30%, #4a4f57 44%, #4a4f57 100%);
+  border: 1px solid rgba(159, 208, 50, .35);
   border-radius: 22px;
-  border: 1px solid #3a3a3a;
-  background: linear-gradient(
-    100deg,
-    #1d1d1d 0%,
-    #2c2c2c 26%,
-    #454545 46%,
-    #7a7a7a 70%,
-    #bdbdbd 90%,
-    #cdcdcd 100%
-  );
-  box-shadow:
-    0 24px 60px rgba(15,23,42,.28),
-    0 2px 0 rgba(159,208,50,.7) inset;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, .18);
 }
 
-.spv-hero::before {
-  content: "";
-  position: absolute;
-  right: -120px;
-  top: -120px;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255,255,255,.08),
-    transparent 68%
-  );
-  pointer-events: none;
-}
-
-.spv-hero::after {
-  content: "";
-  position: absolute;
-  left: -80px;
-  bottom: -140px;
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  border: 30px solid rgba(159,208,50,.12);
-  pointer-events: none;
-}
-
-.spv-hero-left,
-.spv-hero-right {
+/* ---------- RIGHT: image poori right side ---------- */
+.spv-section .spv-hero-right {
   position: relative;
-  z-index: 1;
-  min-width: 0;
+  flex: 0 0 56%;
+  width: 56%;
+  z-index: 0;
+  margin: 0 0 0 auto;           /* right side me */
+  padding: 0;
+  overflow: hidden;   /* zoom hone pe image ka kinaara bahar na dikhe */
 }
+
+.spv-section .spv-hero-img {
+  display: block;
+  position: static;
+  width: 100%;
+  height: auto;                 /* image apni asli ratio me – upar/neeche/left kahin se cut nahi */
+  max-width: none;
+  object-fit: fill;
+  transform: none;
+  filter: none;
+  border-radius: 0;
+  box-shadow: none;
+  transition: transform 1.2s ease;
+}
+
+.spv-section .spv-hero:hover .spv-hero-img {
+  transform: none;
+}
+
+/* black -> image gradient (left se) */
+.spv-section .spv-hero-right::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(90deg,
+      #4a4f57 0%,
+      rgba(74, 79, 87, .85) 8%,
+      rgba(74, 79, 87, .6) 18%,
+      rgba(74, 79, 87, .35) 30%,
+      rgba(74, 79, 87, .14) 42%,
+      rgba(74, 79, 87, 0) 55%);
+}
+
+/* neeche halki shade, button ke peeche */
+.spv-section .spv-hero-right::after {
+  display: none;
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 45%;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(0deg, rgba(0, 0, 0, .45), transparent);
+  /* left kinaare pe shade fade out – koi line na dikhe */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 55%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 55%);
+}
+
+/* ---------- LEFT: text ---------- */
+.spv-section .spv-hero-left {
+  position: absolute;           /* text image ki height nahi badhayega – banner = image ki height */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  box-sizing: border-box;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px 0 16px 40px;
+}
+
+.spv-section .spv-title {
+  margin: 0 0 8px;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.18;
+  color: #FFF;
+}
+
+.spv-section .spv-title span {
+  display: block;
+  color: #9fd032;
+}
+
+.spv-section .spv-sub {
+  max-width: 420px;
+  margin: 0 0 14px;
+  font-size: .92rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, .85);
+}
+
+.spv-section .spv-mini-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.spv-section .spv-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 78px;
+  padding: 7px 14px;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.spv-section .spv-mini strong {
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #9fd032;
+}
+
+.spv-section .spv-mini span {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .8);
+}
+
+/* ---------- BUTTON: image ke upar ---------- */
+.spv-section .spv-read-btn {
+  position: absolute;
+  right: 24px;
+  bottom: 18px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding: 12px 14px 12px 24px;
+  font-size: .95rem;
+  font-weight: 700;
+  color: #0F172A;
+  background: #9fd032;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .35);
+  transform: none;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.spv-section .spv-read-btn:hover {
+  background: #b2e03f;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, .45);
+}
+
+.spv-section .spv-read-btn:focus-visible {
+  outline: 2px solid #FFF;
+  outline-offset: 3px;
+}
+
+.spv-section .spv-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: .95rem;
+  color: #FFF;
+  background: #0F172A;
+  transition: transform .25s ease;
+}
+
+.spv-section .spv-read-btn:hover .spv-arrow {
+  transform: translateX(3px);
+}
+
+/* ---------- TABLET ---------- */
+@media (max-width: 1024px) {
+  .spv-section .spv-hero-right {
+    flex-basis: 58%;
+    width: 58%;
+  }
+
+  .spv-section .spv-hero-left {
+    width: 46%;
+    padding: 10px 0 10px 24px;
+  }
+
+  .spv-section .spv-title {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+  }
+
+  .spv-section .spv-sub {
+    font-size: .8rem;
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+
+  .spv-section .spv-mini span {
+    font-size: .6rem;
+  }
+
+  .spv-section .spv-read-btn {
+    right: 14px;
+    bottom: 12px;
+    padding: 8px 8px 8px 16px;
+    font-size: .82rem;
+  }
+
+  .spv-section .spv-arrow {
+    width: 24px;
+    height: 24px;
+  }
+
+  .spv-section .spv-mini {
+    padding: 6px 10px;
+    min-width: 0;
+  }
+
+  .spv-section .spv-mini strong {
+    font-size: 1rem;
+  }
+}
+
+/* ---------- MOBILE: image upar, text neeche ---------- */
+@media (max-width: 900px) {
+  .spv-section .spv-hero {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 0;
+  }
+
+  .spv-section .spv-hero-right {
+    flex: none;
+    width: 100%;
+    margin: 0;
+    order: -1;
+  }
+
+  .spv-section .spv-hero {
+    background: #4a4f57;
+  }
+
+  /* mobile: text wala hissa grey -> black */
+  .spv-section .spv-hero-left {
+    background: linear-gradient(180deg, #4a4f57 0%, #141414 100%);
+  }
+
+  /* mobile: image apni asli height me, poori dikhe */
+  .spv-section .spv-hero-img {
+    height: auto;
+  }
+
+  /* mobile pe gradient neeche se black */
+  .spv-section .spv-hero-right::before {
+    background: linear-gradient(0deg,
+        #4a4f57 0%,
+        rgba(74, 79, 87, .3) 18%,
+        rgba(74, 79, 87, 0) 40%);
+  }
+
+  .spv-section .spv-hero-right::after {
+    display: none;
+  }
+
+  .spv-section .spv-hero-left {
+    position: relative;
+    width: 100%;
+    margin-right: 0;
+    padding: 18px 22px 26px;
+  }
+
+  .spv-section .spv-title {
+    font-size: 1.6rem;
+  }
+
+  .spv-section .spv-read-btn {
+    top: auto;
+    right: 10px;
+    bottom: 10px;
+    gap: 8px;
+    padding: 6px 7px 6px 14px;
+    font-size: .78rem;
+  }
+
+  .spv-section .spv-arrow {
+    width: 22px;
+    height: 22px;
+    font-size: .8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spv-section .spv-hero-img,
+  .spv-section .spv-read-btn,
+  .spv-section .spv-arrow {
+    transition: none;
+  }
+}
+
+/* ===================== MODAL ===================== */
 
 .spv-chip::before {
   content: "";
@@ -71,163 +340,6 @@
   border-radius: 50%;
   background: var(--primary-green);
   box-shadow: 0 0 0 4px rgba(159,208,50,.25);
-}
-
-.spv-title {
-  margin: 12px 0 0;
-  font-size:2.2rem;
-  font-weight: 800;
-  color: #fff;
-  line-height: 1.2;
-  letter-spacing: -.02em;
-}
-
-.spv-title span {
-  display: inline-block;
-  margin-top: 6px;
-  background: linear-gradient(90deg, #9fd032, #c6ec63);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-}
-
-.spv-sub {
-  margin: 10px 0 0;
-  max-width: 430px;
-  color: #dcdcdc;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.spv-mini-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 16px;
-}
-
-.spv-mini {
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.2);
-  border-radius: 12px;
-  padding: 7px 14px;
-  box-shadow: none;
-}
-
-.spv-mini strong {
-  display: block;
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: #b4e04f;
-  line-height: 1.2;
-}
-
-.spv-mini span {
-  font-size: .68rem;
-  font-weight: 700;
-  color: #c4c4c4;
-  text-transform: uppercase;
-  letter-spacing: .06em;
-}
-
-.spv-hero-right {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: stretch;
-  min-width: 0;
-  min-height: 190px;
-  overflow: visible;
-}
-
-.spv-hero-right::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 42%;
-  width: 340px;
-  height: 210px;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255,255,255,.28) 0%,
-    rgba(255,255,255,.08) 45%,
-    transparent 72%
-  );
-  pointer-events: none;
-  z-index: 0;
-}
-
-.spv-hero-img {
-  position: absolute;
-  left: 42%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: auto;
-  height: 118%;
-  max-width: 100%;
-  object-fit: contain;
-  object-position: center;
-  filter: drop-shadow(0 15px 18px rgba(0,0,0,.30));
-  pointer-events: none;
-  z-index: 1;
-}
-
-.spv-read-btn {
-  position: absolute;
-  left: 60%;
-  bottom: 6px;
-  transform: translateX(-50%);
-  z-index: 3;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: var(--primary-green);
-  color: var(--navy-text);
-  border: 0;
-  border-radius: 999px;
-  padding: 11px 24px;
-  font-size: .92rem;
-  font-weight: 800;
-  cursor: pointer;
-  white-space: nowrap;
-  transition:
-    transform .25s,
-    background .25s,
-    box-shadow .25s;
-  font-family: inherit;
-  box-shadow: 0 12px 26px rgba(0,0,0,.35);
-}
-
-.spv-read-btn .spv-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--navy-text);
-  color: #b4e04f;
-  font-size: .9rem;
-  transition: transform .25s;
-}
-
-.spv-read-btn:hover {
-  background: #b4e04f;
-  transform: translate(-50%, -3px);
-  box-shadow: 0 18px 36px rgba(15,23,42,.34);
-}
-
-.spv-read-btn:hover .spv-arrow {
-  transform: translateX(4px);
-}
-
-.spv-read-btn:focus-visible {
-  outline: 3px solid var(--primary-green);
-  outline-offset: 3px;
 }
 
 .spv-backdrop {
@@ -764,28 +876,6 @@
 
 @media (max-width: 900px) {
 
-  .spv-hero {
-    grid-template-columns: 1fr;
-    padding: 26px 20px;
-    border-radius: 20px;
-    background: linear-gradient(
-      180deg,
-      #1d1d1d 0%,
-      #2c2c2c 45%,
-      #6a6a6a 78%,
-      #b5b5b5 100%
-    );
-  }
-
-  .spv-hero-right {
-    min-height: 250px;
-  }
-
-  .spv-hero-img {
-    height: 100%;
-    max-width: 90%;
-  }
-
   .spv-p6,
   .spv-cards {
     grid-template-columns: 1fr;
@@ -851,44 +941,6 @@
 }
 
 @media (max-width: 560px) {
-
-  .spv-section {
-    padding: 26px 0;
-  }
-
-  .spv-hero {
-    padding: 24px 18px;
-    gap: 14px;
-  }
-
-  .spv-title {
-    font-size: 1.75rem;
-  }
-
-  .spv-sub {
-    font-size: .88rem;
-  }
-
-  .spv-hero-right {
-    min-height: 220px;
-  }
-
-  .spv-hero-img {
-    height: 100%;
-    max-width: 100%;
-    left: 50%;
-  }
-
-  .spv-hero-right::before {
-    left: 50%;
-    width: 260px;
-  }
-
-  .spv-read-btn {
-    bottom: 0;
-    padding: 10px 20px;
-    font-size: .85rem;
-  }
 
   .spv-pillars {
     grid-template-columns: 1fr;
