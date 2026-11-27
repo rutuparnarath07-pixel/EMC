@@ -40,14 +40,14 @@ const STATE_MAPS = {
   }
 };
 
-const MAP_TILE_PX = 72;   
-const MAP_SVG_PX  = 64;  
+const MAP_TILE_PX = 64;
+const MAP_SVG_PX  = 54;
 
 function mapTileHtml(key) {
   const m = STATE_MAPS[key];
   const vb = m.viewBox || "0 0 100 100";
   const sw = m.stroke || 3;
-  return `<div title="${m.name}" style="flex:0 0 auto; width:${MAP_TILE_PX}px; height:${MAP_TILE_PX}px; background:#fff; border-radius:14px; box-shadow:0 2px 8px rgba(0,0,0,0.12); display:flex; align-items:center; justify-content:center;">
+  return `<div class="svc-map-tile" title="${m.name}" style="width:${MAP_TILE_PX}px; height:${MAP_TILE_PX}px;">
     <svg viewBox="${vb}" width="${MAP_SVG_PX}" height="${MAP_SVG_PX}" role="img" aria-label="Map of ${m.name}"><path d="${m.path}" fill="var(--primary-green)" stroke="var(--primary-green)" stroke-width="${sw}" stroke-linejoin="round"/></svg>
   </div>`;
 }
@@ -117,25 +117,16 @@ function kpiTileHtml(k) {
   const keys = k.states || (STATE_MAPS[String(k.number).trim().toLowerCase()] && !k.noMap ? [String(k.number).trim().toLowerCase()] : []);
   const maps = keys.filter(x => STATE_MAPS[x]).map(mapTileHtml).join('');
 
-  const labelHtml = `<div style="font-size:0.625rem; font-weight:600; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.4px; margin-top:${k.lines ? '6px' : '3px'};">${k.label}</div>`;
+  const main = k.lines
+    ? `<div class="svc-kpi-lines">${k.lines.map(line => `<div>${line}</div>`).join('')}</div>`
+    : `<div class="svc-kpi-num">${countNumberHtml(k.number)}</div>`;
 
-  let main;
-  if (k.lines) {
-    main = k.lines.map(line =>
-      `<div style="font-size:0.9375rem; font-weight:800; line-height:1.5; color:var(--primary-green);">${line}</div>`
-    ).join('');
-  } else {
-    main = `<div style="font-size:1.25rem; font-weight:800; line-height:1.1; color:var(--primary-green); letter-spacing:-0.5px; font-variant-numeric:tabular-nums;">${countNumberHtml(k.number)}</div>`;
+  const text = `<div class="svc-kpi-text">${main}<div class="svc-kpi-label">${k.label}</div></div>`;
+
+  if (maps) {
+    return `<div class="svc-kpi svc-kpi-wide"><div class="svc-kpi-maps">${maps}</div>${text}</div>`;
   }
-
-  const text = `<div style="min-width:0; flex:1 1 170px;">${main}${labelHtml}</div>`;
-  const inner = maps
-    ? `<div style="display:flex; align-items:center; flex-wrap:wrap; gap:14px;"><div style="display:flex; gap:8px;">${maps}</div>${text}</div>`
-    : text;
-
-  const span = maps ? 'grid-column:1 / -1;' : '';
-  const pad = maps ? '12px 14px' : '8px 12px';
-  return `<div style="${span} background:var(--light-green-bg); border-radius:var(--radius-sm); padding:${pad}; text-align:left; min-width:0;">${inner}</div>`;
+  return `<div class="svc-kpi">${text}</div>`;
 }
 
 
@@ -545,6 +536,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function openServiceModal(service) {
+  /* ---- Key capabilities (only for services without programs) ---- */
   const capabilitiesHtml = (service.capabilities || []).map(c => `
     <div class="capability-item">
       <div class="capability-icon">${c.icon}</div>
@@ -552,56 +544,52 @@ function openServiceModal(service) {
     </div>
   `).join('');
 
-  const capabilitiesSection = service.programs ? '' : `
-        <div style="font-size:0.75rem; font-weight:700; color:var(--primary-green); text-transform:uppercase; margin-bottom:12px;">KEY CAPABILITIES</div>
-        <div class="service-capabilities-grid">${capabilitiesHtml}</div>`;
+  const capabilitiesSection = (!service.programs && capabilitiesHtml) ? `
+    <h3 class="svc-section-label">Key Capabilities</h3>
+    <div class="service-capabilities-grid">${capabilitiesHtml}</div>` : '';
 
+  /* ---- Programs / Our Work & Impact ---- */
   const programsHeading = service.programsHeading || 'Our Work & Impact';
 
   const programsHtml = (service.programs || []).map(p => `
-    <div style="margin-bottom:10px; padding:12px 16px; background:#fff; border:1px solid #e5e7eb; border-left:4px solid var(--primary-green); border-radius:var(--radius-sm); box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-      <div style="font-weight:800; font-size:0.9375rem; color:var(--navy-text); margin-bottom:2px;">${p.title}</div>
-      <p style="font-size:0.8125rem; color:var(--text-body); line-height:1.4; margin:0 0 10px;">${p.text}</p>
-      ${p.tags ? `<div style="display:flex; flex-wrap:wrap; gap:6px; margin:0 0 10px;">${p.tags.map(t => `<span style="font-size:0.6875rem; font-weight:600; color:var(--primary-green); border:1px solid var(--primary-green); border-radius:999px; padding:2px 10px;">${t}</span>`).join('')}</div>` : ''}
-      <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:8px;">
-        ${p.kpis.map(kpiTileHtml).join('')}
-      </div>
+    <div class="svc-item">
+      <h4 class="svc-item-title">${p.title}</h4>
+      <p class="svc-item-text">${p.text}</p>
+      ${p.tags ? `<div class="svc-tags">${p.tags.map(t => `<span class="svc-tag">${t}</span>`).join('')}</div>` : ''}
+      ${(p.kpis && p.kpis.length) ? `<div class="svc-kpi-grid">${p.kpis.map(kpiTileHtml).join('')}</div>` : ''}
     </div>
   `).join('');
 
   const programsSection = programsHtml
-    ? `<div style="font-size:0.75rem; font-weight:700; color:var(--primary-green); text-transform:uppercase; letter-spacing:0.5px; margin:0 0 14px;">${programsHeading}</div>${programsHtml}<div style="margin-bottom:24px;"></div>`
+    ? `<h3 class="svc-section-label">${programsHeading}</h3><div class="svc-list">${programsHtml}</div>`
     : '';
 
+  /* ---- Numbers (only for services without programs, same as original) ---- */
   const statsHtml = (service.stats || []).map(s => `
-    <div>
-      <div style="font-size:1.25rem; font-weight:800; color:var(--navy-text); font-variant-numeric:tabular-nums;">${countNumberHtml(s.number)}</div>
-      <div style="font-size:0.75rem; color:var(--text-muted);">${s.label}</div>
+    <div class="svc-stat">
+      <div class="svc-stat-num">${countNumberHtml(s.number)}</div>
+      <div class="svc-stat-label">${s.label}</div>
     </div>
   `).join('');
- 
-  const statsBox = service.programs ? '' : `
-    <div style="display:flex; align-items:center; justify-content:space-between; padding:16px 20px; background:var(--light-green-bg); border-radius:var(--radius-sm); margin-bottom:24px;">
-      ${statsHtml}
-    </div>`;
+
+  /* same as original: numbers sirf tab dikhenge jab programs nahi hain */
+  const statsBox = (!service.programs && statsHtml) ? `<div class="svc-stats">${statsHtml}</div>` : '';
 
   const modalHtml = `
-    <div class="modal-service-content">
-      <div class="modal-service-left">
-        <img src="${service.image}" alt="${service.title}" class="modal-service-img">
-      </div>
-      <div class="modal-service-right">
-        <div style="font-size:0.75rem; font-weight:700; color:var(--primary-green); text-transform:uppercase; margin-bottom:4px;"></div>
-        <h2 style="font-size:1.875rem; font-weight:800; color:var(--navy-text); margin-bottom:6px;">${service.title}</h2>
-        <div style="font-size:0.9375rem; font-weight:600; color:var(--primary-green); margin-bottom:16px;">${service.subtitle}</div>
-        <p style="font-size:0.875rem; color:var(--text-body); line-height:1.6; margin-bottom:24px;">${service.description}</p>
-        
+    <div class="svc-modal">
+      <aside class="svc-left">
+        <img src="${service.image}" alt="${service.title}" class="svc-modal-img">
+        <div class="svc-left-text">
+          <h2 class="svc-modal-title">${service.title}</h2>
+          <div class="svc-modal-subtitle">${service.subtitle}</div>
+          <p class="svc-modal-desc">${service.description}</p>
+          ${statsBox}
+        </div>
+      </aside>
+
+      <div class="svc-right">
         ${capabilitiesSection}
-
         ${programsSection}
-
-        ${statsBox}
-
       </div>
     </div>
   `;
