@@ -156,48 +156,45 @@
       </div>
     </section>
 
-    <!-- ===================== VISION & MISSION (two cards: left / right) ===================== -->
-    <section class="about-sec about-vm-section" id="vision-mission">
+    <!-- ===================== VISION & MISSION + OUR FOCUS ===================== -->
+    <section class="vmf-section" id="vision-mission">
       <div class="container">
-        <div class="about-vm-journey" data-reveal>
 
-          <!-- VISION (left card) -->
-          <article class="about-vm-item">
-            <span class="about-vm-node">
+        <div class="vmf-layout">
+        <div class="vmf-left">
+
+        <!-- Vision (left) & Mission (right) -->
+        <div class="vmf-cards" data-reveal>
+
+          <article class="vmf-card vmf-vision">
+            <span class="vmf-icon">
               <svg width="34" height="34" viewBox="0 0 64 64" fill="none"
-                stroke="currentColor" stroke-width="4.5" stroke-linecap="round"
+                stroke="currentColor" stroke-width="4" stroke-linecap="round"
                 stroke-linejoin="round" aria-hidden="true">
                 <path
                   d="M5 32c8-12 18-16 27-16s19 4 27 16c-8 12-18 16-27 16S13 44 5 32z" />
                 <circle cx="32" cy="32" r="9" fill="currentColor" />
-                <circle cx="28.5" cy="28.5" r="2.4" fill="#fff" stroke="none" />
                 <line x1="32" y1="3" x2="32" y2="8" />
                 <line x1="19" y1="6" x2="21.5" y2="10.5" />
                 <line x1="45" y1="6" x2="42.5" y2="10.5" />
-                <line x1="8" y1="13" x2="12" y2="16.5" />
-                <line x1="56" y1="13" x2="52" y2="16.5" />
                 <line x1="32" y1="61" x2="32" y2="56" />
                 <line x1="19" y1="58" x2="21.5" y2="53.5" />
                 <line x1="45" y1="58" x2="42.5" y2="53.5" />
-                <line x1="8" y1="51" x2="12" y2="47.5" />
-                <line x1="56" y1="51" x2="52" y2="47.5" />
               </svg>
             </span>
-            <span class="about-vm-tag">Where we are headed</span>
             <h3>Vision</h3>
             <p>To be a globally trusted partner of choice in providing
               integrated &amp; multi-disciplinary engineering consultancy
               solutions.</p>
           </article>
 
-          <!-- MISSION (right card) -->
-          <article class="about-vm-item">
-            <span class="about-vm-node">
+          <article class="vmf-card vmf-mission">
+            <span class="vmf-icon">
               <svg width="34" height="34" viewBox="0 0 64 64" fill="none"
                 stroke="currentColor" stroke-linecap="round"
                 stroke-linejoin="round" aria-hidden="true">
-                <circle cx="29" cy="35" r="23" stroke-width="7" />
-                <circle cx="29" cy="35" r="11" stroke-width="6" />
+                <circle cx="29" cy="35" r="23" stroke-width="6" />
+                <circle cx="29" cy="35" r="11" stroke-width="5" />
                 <circle cx="29" cy="35" r="4.5" fill="currentColor"
                   stroke="none" />
                 <line x1="31" y1="33" x2="50" y2="14" stroke-width="4" />
@@ -205,14 +202,43 @@
                   fill="currentColor" stroke="none" />
               </svg>
             </span>
-            <span class="about-vm-tag">How we get there</span>
             <h3>Mission</h3>
             <p>To transform lives, empower communities and create a
-              climate-smart future through innovative, data driven, leading-edge
-              engineering and project management services.</p>
+              climate-smart future through innovative, data driven,
+              leading-edge engineering and project management services.</p>
           </article>
 
         </div>
+
+        </div><!-- /vmf-left -->
+
+        <!-- Our Focus (right side, plain text, no card border) -->
+        <div class="vmf-right">
+        <h2 class="vmf-focus-title" data-reveal>Our <span>Focus</span></h2>
+
+        <div class="vmf-focus-grid">
+          <div class="vmf-focus-item" data-reveal>
+            <h4>Innovation</h4>
+            <p>We thrive on pushing boundaries, exploring uncharted territories
+              and redefining what’s possible. Our solutions are born at the
+              intersection of creativity and practicality.</p>
+          </div>
+          <div class="vmf-focus-item" data-reveal style="--reveal-delay:0.10s">
+            <h4>Collaboration</h4>
+            <p>We don’t work in silos, we thrive in synergy. By partnering with
+              clients, stakeholders and communities, we co-create strategies
+              that resonate. Together, we amplify impact.</p>
+          </div>
+          <div class="vmf-focus-item" data-reveal style="--reveal-delay:0.20s">
+            <h4>Sustainability</h4>
+            <p>It’s not just a buzzword for us – it’s our ethos. We uphold the
+              highest standards of environmental responsibility. Our projects
+              leave footprints of progress, not carbon.</p>
+          </div>
+        </div>
+        </div><!-- /vmf-right -->
+        </div><!-- /vmf-layout -->
+
       </div>
     </section>
 
