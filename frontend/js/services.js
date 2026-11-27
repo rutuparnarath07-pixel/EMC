@@ -505,7 +505,7 @@ const SERVICES_DATA = [
         tags: ["ROW Approvals", "Regulatory Permissions", "Validation"]
       },
       {
-        title: "Global Telecom Project Delivery",
+        title: "Global Project Delivery",
         text: "Successful telecom project delivery across USA and Canada through established global partnerships.",
         kpis: [
           { number: "15k+", label: "Jobs Delivered" },
