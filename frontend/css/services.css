@@ -388,7 +388,7 @@
 
 /* =========================================================
    MEGA MENU (Delivery Experience dropdown) - 3 x 3 layout
-   Width change karni ho to sirf "width: 620px" badlo.
+   Width change karni ho to sirf "width: 660px" badlo.
    ========================================================= */
 
 .site-header .nav-item-has-mega {
@@ -400,7 +400,7 @@
   top: 100%;
   left: 50%;
   z-index: 1000;
-  width: 620px;
+  width: 660px;
   max-width: calc(100vw - 32px);
   padding: 12px;
   margin-top: 14px;
