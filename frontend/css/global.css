@@ -468,13 +468,12 @@ p:last-child {
   transform: translateX(5px);
 }
 
-/* Breadcrumbs */
 .breadcrumbs {
   display: flex;
   align-items: center;
   gap: 8px;
   font-size: 0.875rem;
-  color: var(--text-muted);
+  color: #ffff;
   margin-bottom: 18px;
 }
 
@@ -487,7 +486,7 @@ p:last-child {
 }
 
 .breadcrumbs span {
-  color: var(--navy-text);
+  color: #ffff;
   font-weight: 600;
 }
 
@@ -796,7 +795,6 @@ p:last-child {
   transition-delay: 0.4s;
 }
 
-/* Responsive Grid Utilities */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -815,7 +813,6 @@ p:last-child {
   gap: 24px;
 }
 
-/* Responsive Breakpoints */
 @media (max-width: 1024px) {
   .stats-bar {
     grid-template-columns: repeat(3, 1fr);
