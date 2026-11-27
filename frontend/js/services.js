@@ -491,24 +491,24 @@ const SERVICES_DATA = [
     title: "Telecommunications",
     subtitle: "",
     image: "assets/Telecommunication.png",
-    description: "Complete solutions for global telecommunications industry – from network architectures and fiber designs to deployment strategies.",
+    description: "Complete solutions for global telecommunications industry from planning, designing and drafting to intelligence networking.",
     capabilities: [],
     programs: [
       {
-        title: "Telecom Network Planning & Engineering",
+        title: "Network Planning & Engineering",
         text: "End-to-end fibre network planning, broadband engineering and network optimisation.",
-        tags: ["Network Topology", "Fibre Design", "FTTx", "G-PON / X-PON"]
+        tags: ["Structural Design & Analysis", "Fibre Design", "FTTX", "OSP"]
       },
       {
-        title: "Telecom Permitting & Compliance Management",
+        title: "Permit Management & Traffic Control Planning",
         text: "Comprehensive permit management, regulatory approvals and environmental & structural compliance.",
-        tags: ["ROW Approvals", "Regulatory Permissions", "Compliance Audits"]
+        tags: ["ROW Approvals", "Regulatory Permissions", "Validation"]
       },
       {
         title: "Global Telecom Project Delivery",
         text: "Successful telecom project delivery across USA and Canada through established global partnerships.",
         kpis: [
-          { number: "4M", label: "Jobs Delivered" },
+          { number: "15k+", label: "Jobs Delivered" },
           { number: "40+", label: "States in USA" },
           { number: "1", label: "Province in Canada" }
         ]
