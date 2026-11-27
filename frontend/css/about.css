@@ -920,7 +920,7 @@
 }
 
 .vmf-card h3 {
-  font-size: 2.2rem;
+  font-size: 2.0rem;
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -.015em;
@@ -974,8 +974,20 @@
 }
 
 .vmf-focus-title span {
-  border-bottom: 3px solid #5B9423;
+  border-bottom: none;
   padding-bottom: 2px;
+  position: relative;
+}
+
+.vmf-focus-title span::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 3px;
+  background: #5B9423;
+  bottom: -4px;
+  left: 30%;
+  transform: translateX(-50%);
 }
 
 .vmf-focus-grid {
