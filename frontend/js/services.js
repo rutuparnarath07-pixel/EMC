@@ -589,9 +589,6 @@ function openServiceModal(service) {
     <div class="modal-service-content">
       <div class="modal-service-left">
         <img src="${service.image}" alt="${service.title}" class="modal-service-img">
-        <div class="modal-service-overlay">
-          <p class="handwritten-quote-light" style="font-size:1.8rem; margin:0;">"${service.quote}"</p>
-        </div>
       </div>
       <div class="modal-service-right">
         <div style="font-size:0.75rem; font-weight:700; color:var(--primary-green); text-transform:uppercase; margin-bottom:4px;"></div>
