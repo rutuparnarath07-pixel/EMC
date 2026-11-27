@@ -486,6 +486,37 @@ const SERVICES_DATA = [
     stats: []
   },
   {
+    id: "telecommunications",
+    aliases: ["telecom", "telecommunication", "telecommunications-services"],
+    title: "Telecommunications",
+    subtitle: "",
+    image: "assets/Telecommunication.png",
+    description: "Complete solutions for global telecommunications industry – from network architectures and fiber designs to deployment strategies.",
+    capabilities: [],
+    programs: [
+      {
+        title: "Telecom Network Planning & Engineering",
+        text: "End-to-end fibre network planning, broadband engineering and network optimisation.",
+        tags: ["Network Topology", "Fibre Design", "FTTx", "G-PON / X-PON"]
+      },
+      {
+        title: "Telecom Permitting & Compliance Management",
+        text: "Comprehensive permit management, regulatory approvals and environmental & structural compliance.",
+        tags: ["ROW Approvals", "Regulatory Permissions", "Compliance Audits"]
+      },
+      {
+        title: "Global Telecom Project Delivery",
+        text: "Successful telecom project delivery across USA and Canada through established global partnerships.",
+        kpis: [
+          { number: "4M", label: "Jobs Delivered" },
+          { number: "40+", label: "States in USA" },
+          { number: "1", label: "Province in Canada" }
+        ]
+      }
+    ],
+    stats: []
+  },
+  {
 
     id: "environmental-social",
     aliases: ["environmental", "environmental-social-development", "social-development"],
@@ -575,13 +606,16 @@ function openServiceModal(service) {
   /* same as original: numbers sirf tab dikhenge jab programs nahi hain */
   const statsBox = (!service.programs && statsHtml) ? `<div class="svc-stats">${statsHtml}</div>` : '';
 
+  /* subtitle sirf tab dikhega jab bhara ho */
+  const subtitleHtml = service.subtitle ? `<div class="svc-modal-subtitle">${service.subtitle}</div>` : '';
+
   const modalHtml = `
     <div class="svc-modal">
       <aside class="svc-left">
         <img src="${service.image}" alt="${service.title}" class="svc-modal-img">
         <div class="svc-left-text">
           <h2 class="svc-modal-title">${service.title}</h2>
-          <div class="svc-modal-subtitle">${service.subtitle}</div>
+          ${subtitleHtml}
           <p class="svc-modal-desc">${service.description}</p>
           ${statsBox}
         </div>
