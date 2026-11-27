@@ -7,7 +7,7 @@
   overflow: hidden;
   width: 100%;
   padding: 36px 0 32px;
- background-color: #1f3d2f;
+  background-color: #1f3d2f;
   background-image:
     linear-gradient(90deg,
       rgba(12, 48, 36, 0.38) 0%,
@@ -17,7 +17,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-    border-bottom: 1px solid var(--border-color, #e5e7eb);
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
 }
 
 /* No pseudo-element layers needed any more */
@@ -100,13 +100,15 @@
 
 .container.what-we-do {
   padding-top: 56px;
-  max-width: 1230px;   
+  max-width: 1230px;
 }
-.what-we-do{
- font-size:2.2rem; 
- font-weight:800; 
- color:var(--navy-text);
+
+.what-we-do {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--navy-text);
 }
+
 .what-we-do-head {
   display: flex;
   align-items: flex-end;
@@ -385,23 +387,25 @@
 }
 
 /* =========================================================
-   MEGA MENU (Delivery Experience dropdown)
+   MEGA MENU (Delivery Experience dropdown) - 3 x 3 layout
+   Width change karni ho to sirf "width: 620px" badlo.
    ========================================================= */
 
 .site-header .nav-item-has-mega {
   position: relative;
 }
 
-.site-header .nav-item-has-mega .mega-menu-dropdown {
+.site-header .nav-menu .nav-item-has-mega .mega-menu-dropdown {
   position: absolute;
   top: 100%;
   left: 50%;
   z-index: 1000;
   width: 620px;
   max-width: calc(100vw - 32px);
-  padding: 20px;
+  padding: 12px;
   margin-top: 14px;
   display: block;
+  box-sizing: border-box;
   background: #FFF;
   border: 1px solid #E2E8F0;
   border-radius: 16px;
@@ -412,7 +416,7 @@
   transition: opacity .25s ease, transform .25s ease, visibility .25s;
 }
 
-/* hover gap bridge – mouse le jaate waqt menu band na ho */
+/* hover gap bridge - mouse le jaate waqt menu band na ho */
 .site-header .nav-item-has-mega .mega-menu-dropdown::before {
   content: "";
   position: absolute;
@@ -444,7 +448,7 @@
   transform: translate(-50%, 0);
 }
 
-/* right side wala "Advisory & Consultancy" box – poori tarah hide */
+/* right side wala "Advisory & Consultancy" box - poori tarah hide */
 .site-header .mega-menu-sidebar,
 .mega-menu-dropdown .mega-menu-sidebar {
   display: none !important;
@@ -454,12 +458,12 @@
   grid-template-columns: 1fr !important;
 }
 
-/* label: "EMC 8 Core Sectors" */
+/* label: "EMC 9 Core Sectors" */
 .site-header .mega-menu-label {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 0 4px 14px;
+  margin: 0 2px 8px;
   font-size: .72rem;
   font-weight: 800;
   letter-spacing: .12em;
@@ -474,18 +478,19 @@
   background: #E2E8F0;
 }
 
-/* grid: 2 column */
-.site-header .mega-menu-grid {
+/* grid: 3 column x 3 row */
+.site-header .nav-menu .mega-menu-dropdown .mega-menu-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 6px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
 }
 
 .site-header .mega-menu-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 12px;
+  gap: 8px;
+  min-width: 0;
+  padding: 6px 8px;
   border-radius: 12px;
   text-decoration: none;
   border: 1px solid transparent;
@@ -502,13 +507,13 @@
 
 .site-header .mega-menu-icon {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   line-height: 1;
   background: #EEF6E6;
   transition: background .2s ease, transform .2s ease;
@@ -520,11 +525,12 @@
 }
 
 .site-header .mega-menu-title {
-  font-size: .88rem;
+  font-size: .84rem;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.25;
   color: var(--navy-text, #0F172A);
-  white-space: nowrap;
+  white-space: normal;      /* lamba title (Urban Development...) wrap ho jaye */
+  word-break: normal;
 }
 
 .site-header .mega-menu-item:hover .mega-menu-title {
@@ -565,7 +571,7 @@
 
 /* tablet/mobile: mega menu nahi (mobile drawer use hota hai) */
 @media (max-width: 1024px) {
-  .site-header .nav-item-has-mega .mega-menu-dropdown {
+  .site-header .nav-menu .nav-item-has-mega .mega-menu-dropdown {
     display: none;
   }
 }
