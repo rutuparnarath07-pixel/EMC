@@ -1,7 +1,3 @@
-/* ==========================================================================
-   UNIFIED DYNAMIC MODAL ENGINE STYLING (ANIMATED & GLASSMORPHISM)
-   ========================================================================== */
-
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -77,9 +73,6 @@
   height: 18px;
 }
 
-/* Modal Layout Variants */
-
-/* 1. Team Modal Split Layout */
 .modal-team-content {
   display: grid;
   grid-template-columns: 340px 1fr;
@@ -172,74 +165,221 @@
   color: var(--navy-text);
 }
 
-/* 2. Service Modal Split Layout */
-.modal-service-content {
-  display: grid;
-  grid-template-columns: 380px 1fr;
+/* =========================================================
+   SERVICE POPUP (Delivery Experience cards)
+   Left: full image + title/description | Right: work & impact
+   Compact size, no background colour behind image
+   ========================================================= */
+
+/* popup thoda chhota (sirf service popup ke liye) */
+.modal-card:has(.svc-modal) {
+  max-width: 900px;
+  max-height: 86vh;
 }
 
-.modal-service-left {
-  position: relative;
-  background-color: var(--dark-green);
-  color: #FFFFFF;
-  overflow: hidden;
+.svc-modal {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  background: #FFF;
+}
+
+/* ---------- left ---------- */
+.svc-left {
+  position: sticky;            /* scroll karte waqt image + title dikhte rahein */
+  top: 0;
+  align-self: start;
+  border-right: 1px solid #EEF0F2;
+}
+
+.svc-modal-img {
+  display: block;
+  width: 100%;
+  height: auto;                /* poori image, koi crop nahi, koi bg nahi */
+}
+
+.svc-left-text {
+  padding: 18px 22px 22px;
+}
+
+.svc-modal-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--navy-text);
+  margin: 0 0 4px;
+}
+
+.svc-modal-subtitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-green);
+  margin-bottom: 10px;
+}
+
+.svc-modal-desc {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--text-body);
+  margin: 0;
+}
+
+.svc-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #EEF0F2;
+}
+
+.svc-stat-num {
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--primary-green);
+  font-variant-numeric: tabular-nums;
+}
+
+.svc-stat-label {
+  margin-top: 2px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* ---------- right ---------- */
+.svc-right {
+  min-width: 0;
+  padding: 22px 24px 24px;
+}
+
+.svc-section-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary-green);
+  margin: 0 40px 12px 0;       /* right: close button ke liye jagah */
+}
+
+.svc-list {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
 }
 
-.modal-service-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.6;
+.svc-item {
+  padding: 12px 0 12px 14px;
+  border-left: 3px solid var(--primary-green);
+  border-bottom: 1px solid #F1F3F5;
 }
 
-.modal-service-overlay {
-  position: relative;
-  z-index: 2;
-  padding: 32px 28px;
-  background: linear-gradient(to top, rgba(27, 67, 50, 0.95), transparent);
+.svc-item + .svc-item {
+  margin-top: 10px;
 }
 
-.modal-service-right {
-  padding: 36px 40px;
+.svc-item:last-child {
+  border-bottom: 0;
 }
 
-.service-capabilities-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin: 24px 0;
-}
-
-.capability-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 12px;
-  background-color: var(--bg-light);
-  border-radius: var(--radius-sm);
-  font-size: 0.875rem;
-  font-weight: 600;
+.svc-item-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.3;
   color: var(--navy-text);
-  transition: var(--transition);
+  margin: 0 0 3px;
 }
 
-.capability-item:hover {
-  background-color: var(--light-green-bg);
-  transform: translateX(4px);
+.svc-item-text {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--text-body);
+  margin: 0;
 }
 
-.capability-icon {
+.svc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.svc-tag {
+  font-size: 0.66rem;
+  font-weight: 600;
   color: var(--primary-green);
-  flex-shrink: 0;
+  border: 1px solid var(--primary-green);
+  border-radius: 999px;
+  padding: 1px 9px;
 }
 
-/* 3. Project Detail Modal Layout */
+/* KPI: small inline items */
+.svc-kpi-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 8px;
+}
+
+.svc-kpi {
+  min-width: 0;
+}
+
+.svc-kpi-wide {
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.svc-kpi-maps {
+  display: flex;
+  gap: 6px;
+}
+
+.svc-map-tile {
+  flex: 0 0 auto;
+  background: #FFF;
+  border-radius: 10px;
+  border: 1px solid #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svc-kpi-text {
+  min-width: 0;
+}
+
+.svc-kpi-wide .svc-kpi-text {
+  flex: 1 1 150px;
+}
+
+.svc-kpi-num {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--primary-green);
+  font-variant-numeric: tabular-nums;
+}
+
+.svc-kpi-lines div {
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--navy-text);
+}
+
+.svc-kpi-label {
+  margin-top: 1px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
 .modal-project-content {
   padding: 36px 40px;
 }
@@ -338,20 +478,33 @@
 
 /* Responsive Modal */
 @media (max-width: 880px) {
-  .modal-team-content,
-  .modal-service-content {
+  .modal-team-content {
     grid-template-columns: 1fr;
+  }
+  .svc-modal {
+    grid-template-columns: 1fr;
+  }
+  .svc-left {
+    position: static;
+    border-right: 0;
+    border-bottom: 1px solid #EEF0F2;
+  }
+  .svc-left-text {
+    padding: 16px 18px 18px;
+  }
+  .svc-right {
+    padding: 18px 18px 22px;
+  }
+  .svc-section-label {
+    margin-right: 0;
   }
   .modal-team-left {
     border-right: none;
     border-bottom: 1px solid var(--border-color);
     padding: 24px;
   }
-  .modal-team-right, .modal-service-right, .modal-project-content {
+  .modal-team-right, .modal-project-content {
     padding: 24px 20px;
-  }
-  .modal-service-left {
-    height: 220px;
   }
   .project-tab-pane.active {
     grid-template-columns: 1fr;
