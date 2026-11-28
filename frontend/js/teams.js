@@ -47,7 +47,7 @@ const TEAM_MEMBERS_DATA = [
     id: 4,
     name: "Mr. Swagat Satpathy",
     role: "Vice President, Business Operations",
-    department: "Operations",
+    department: "Leadership",
     photo: "assets/images/Team Photos/Swagat Satpathy.jpg",
     bio: "Mr. Swagat Satpathy is an experienced management professional with over two decades of leadership experience in strategic planning, business development, and organizational growth. An MBA by qualification, he has consistently driven value creation through well-structured business strategies and innovation-led initiatives.\n\nHis career spans diverse management roles across multiple domains, providing him with a broad industry perspective and deep insights into optimizing business operations. He has worked with reputed organizations such as Kuoni, Tetra Tech, and L&T, and has collaborated extensively with government bodies and bilateral agencies including JICA and the World Bank.\n\nKnown for his collaborative leadership style and global outlook, he excels in cross-functional coordination, complex problem-solving, and strategic execution. He is an active member of the International Water Association (IWA) and the Indian Water Works Association (IWWA).",
     focusAreas: [
@@ -173,7 +173,7 @@ const TEAM_MEMBERS_DATA = [
     id: 13,
     name: "Mr. Prasanta Panda",
     role: "General Manager, Commercials & Business Development",
-    department: "Finance & Accounts",
+    department: "Finance & BD",
     photo: "assets/images/Team Photos/Prasant-Panda.jpg",
     bio: "Mr. Prasanta Panda is a finance and accounts professional with an MBA in Finance and a B.Com. (Accounting Hons.). He has more than 15 years of rich experience in financial management, budgeting, revenue projections, and tax management, ensuring compliance with statutory laws and regulations while mitigating financial risks. He has also successfully completed the Advanced GST Certification from ICMAI.\n\nProficient in reviewing and analyzing financial data, he excels in preparing financial reports and interpreting complex financial information for strategic decision-making, along with liaising with clients, funding agencies, and stakeholders. Previously, he worked with EGIS India, Tetra Tech India, and JICA-assisted OISIP, where he orchestrated several project accounts, which armed him with a robust skill set in the finance sector. He has been a key member of EMC since its inception and has played a pivotal role in shaping the company’s financial strategy within the organization.",
     focusAreas: [
@@ -229,7 +229,7 @@ const TEAM_MEMBERS_DATA = [
     id: 17,
     name: "Mr. Shyamal Kishore Das",
     role: "Deputy General Manager, Communications & Outreach",
-    department: "",
+    department: "Corporate Communication",
     photo: "assets/images/Team Photos/Shyamal-Kishore.jpg",
     bio: "Mr. Shyamal Kishore Das is a communication and public relations professional with over 25 years of experience spanning the development sector, corporate organizations, mass media, and social media across India.\n\nHe has strong expertise in social sector programs including WASH, child rights, disability inclusion, health, nutrition, and humanitarian response. His career includes associations with WATCO (Government of Odisha), JICA-supported OISIP, UNICEF, IPE Global, Save the Children, Handicap International, ActionAid, Indian Red Cross Society, and ETV Network.\n\nWith fluency in multiple languages, he brings strengths in organizational branding, IEC development, media management, communication strategy formulation, content creation, policy advocacy, and campaign and event management.",
     focusAreas: [
@@ -397,7 +397,7 @@ const TEAM_MEMBERS_DATA = [
     id: 29,
     name: "Ms. Rupinder Kaur",
     role: "Principal Urban Planner",
-    department: "GIS & Urban Planning",
+    department: "Urban Planning",
     photo: "assets/images/Team Photos/Rupinder-Kaur-1.jpg",
     bio: "Ms. Rupinder Kaur is a dedicated Economist – Urban and Regional Planner with over 10 years of experience in spatial planning, land management, and urban development. She holds a Master’s degree in Regional Planning from the School of Planning and Architecture, New Delhi, and has contributed extensively to Central Govt. projects, including JnNURM, City Development Plans and GIS-based Master Plans under the AMRUT Scheme for various cities of Uttar Pradesh, Punjab, Uttarakhand, Arunachal Pradesh, and Maharashtra.\n\nShe has also gained valuable experience in preparing Transit-Oriented Development (TOD) plans for RRTS stations under the Regional Rapid Transit System (RRTS) Project of the Govt. of India. Ms. Kaur has worked as a Consultant with the Ministry of Housing & Urban Affairs, Govt. of India, and with leading planning firms such as DDF Consultants and Tandon Urban Solutions. She has led projects focused on zoning regulations, TOD, TDR mechanisms, and site selection for land acquisition, and has contributed to international assignments in the WASH sector in Countries of the African continent under World Bank funded projects.\n\nHer core expertise lies in preparing master plans, drafting development control regulations, coordinating with State Planning Authorities, and formulating strategic land-use interventions, making her a Technical Advisor across both Govt. and Consultancy sectors. In addition, she brings strong experience as a Technical Proposal Writer for high-impact projects of the World Bank and the Govt. of India, where she contributes to designing and executing urban development strategies that promote sustainable and inclusive growth. Passionate about creating data-driven, resilient cities, Ms. Kaur continues to play a pivotal role in shaping urban development across diverse geographies.",
     focusAreas: [
@@ -411,7 +411,7 @@ const TEAM_MEMBERS_DATA = [
     id: 30,
     name: "Ms. Leena Sahoo",
     role: "Principal Urban Planner",
-    department: "GIS",
+    department: "Urban Planning",
     photo: "assets/images/Team Photos/Leena-Sahoo-2.jpg",
     bio: "A seasoned urban planner and architect, Leena Sahoo brings over a decade of diverse experience in urban governance, regional planning, and sustainable development. With an academic foundation that includes a Bachelor’s in Architecture and Master’s in Planning, she is currently pursuing her PhD in Public Administration from Utkal University.\n\nShe is a Partner at T.S. Consultancy and has contributed significantly to multiple high-impact projects including the LEZ planning around Lingaraj Temple and the Tourism Master Plan for Chilika Lake under ICZMP. Leena’s professional tenure includes consultancy roles with organizations like IPE Global, Voyants Solutions as well as a faculty position at OUTR (former CET), Bhubaneswar.\n\nA member of the Institute of Town Planners, India (ITPI) and the Council of Architecture, Leena excels in stakeholder engagement, regulatory compliance, and spatial planning. Her passion for peri-urbanism and sustainable urban strategies is reflected in her research, workshops, and numerous national and international conference presentations.",
     focusAreas: [
