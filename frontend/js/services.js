@@ -524,7 +524,7 @@ const SERVICES_DATA = [
         title: "Global Project Delivery",
         text: "Successful telecom project delivery across USA and Canada through established global partnerships.",
         kpis: [
-          { number: "15k+", label: "Jobs Delivered" },
+          { number: "15K+", label: "Jobs Delivered" },
           { number: "40+", label: "States in USA" },
           { number: "1", label: "Province in Canada" }
         ]
