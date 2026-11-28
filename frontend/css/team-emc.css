@@ -1,17 +1,17 @@
 .tm-hero {
   position: relative;
-  padding: 60px 0 70px;
+  padding: 90px 0 140px;
   width: 100%;
-  --hero-img: url("../assets/images/");
+  --hero-img: url("../assets/images/Team Photos/team-emc hero.jpeg");
   background-color: #000000;
-  background-image:
-    linear-gradient(90deg,
-      rgba(12, 48, 36, 0.38) 0%,
-      rgba(12, 48, 36, 0.18) 50%,
-      rgba(12, 48, 36, 0) 100%),
-    var(--hero-img);
+ background-image:
+  linear-gradient(90deg,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.50) 50%,
+    rgba(0, 0, 0, 0.35) 100%),
+  var(--hero-img);
   background-size: cover;
-  background-position: center;
+  background-position: center 68%;
   background-repeat: no-repeat;
   border-bottom: 1px solid var(--border-color, #e5e7eb);
 }
@@ -22,7 +22,9 @@
   gap: 48px;
   align-items: center;
 }
-
+.tm-hero-grid > div {
+  transform: translateY(30px);
+}
 .tm-hero-title {
   font-size: 2.2rem;
   font-weight: 800;
@@ -38,35 +40,19 @@
   -webkit-text-fill-color: transparent;
 }
 
-.tm-hero-sub {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--navy-text);
-  margin-bottom: 24px;
-}
-
 .tm-hero-text {
-  color: var(--text-body);
+  color: #ffff;
   max-width: 540px;
 }
 
-.tm-hero-side { text-align: right; }
-.tm-hero-quote { font-size: 2.5rem; }
-
-/* ---------- SECTION HEADING ---------- */
-.tm-section-title {
-  font-size: 2.25rem;
-  font-weight: 800;
-  color: var(--navy-text);
-  margin-bottom: 20px;
-}
 
 /* ---------- GRID ---------- */
 .tm-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 20px;
   margin-bottom: 60px;
+  margin-top: 30px;
 }
 
 /* ---------- CARD ---------- */
@@ -146,20 +132,40 @@
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 1024px) {
-  .tm-grid { grid-template-columns: repeat(2, 1fr); }
+  .tm-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 900px) {
-  .tm-hero-grid { grid-template-columns: 1fr; gap: 28px; }
-  .tm-hero .handwritten-quote { white-space: normal; overflow-wrap: anywhere; text-align: left !important; }
+  .tm-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .tm-hero .handwritten-quote {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: left !important;
+  }
 }
 
 @media (max-width: 640px) {
-  .tm-hero { padding: 36px 0 44px; }
-  .tm-hero-title { font-size: clamp(2rem, 9vw, 2.6rem); }
-  .tm-hero .handwritten-quote { font-size: 1.9rem !important; }
+  .tm-hero {
+    padding: 36px 0 44px;
+  }
+
+  .tm-hero-title {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+  }
+
+  .tm-hero .handwritten-quote {
+    font-size: 1.9rem !important;
+  }
 }
 
 @media (max-width: 540px) {
-  .tm-grid { grid-template-columns: 1fr; }
+  .tm-grid {
+    grid-template-columns: 1fr;
+  }
 }
