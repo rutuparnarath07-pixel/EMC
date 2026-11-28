@@ -102,23 +102,38 @@ function animateCounts(root) {
     const start = performance.now() + delay;
 
     function tick(now) {
-      if (!el.isConnected) return;                      
+      if (!el.isConnected) return;
       const t = Math.min(Math.max((now - start) / COUNT_DURATION_MS, 0), 1);
-      const eased = 1 - Math.pow(1 - t, 3);              
+      const eased = 1 - Math.pow(1 - t, 3);
       el.textContent = prefix + formatCount(target * eased, decimals, comma) + suffix;
       if (t < 1) requestAnimationFrame(tick);
-      else el.textContent = finalText;                   
+      else el.textContent = finalText;
     }
     requestAnimationFrame(tick);
   });
 }
 
 function kpiTileHtml(k) {
-  const keys = k.states || (STATE_MAPS[String(k.number).trim().toLowerCase()] && !k.noMap ? [String(k.number).trim().toLowerCase()] : []);
+  /* Project Locations: alag full-width row, label upar, city + state 3 columns mein */
+  if (k.lines) {
+    const locs = [];
+    for (let i = 0; i < k.lines.length; i += 2) {
+      const parts = String(k.lines[i]).split('|');   /* "Chennai|(Area X & XII)" => city + area */
+      const area = parts[1] ? ` <span class="svc-loc-area">${parts[1]}</span>` : '';
+      locs.push(`<div class="svc-loc"><div class="svc-loc-city">${parts[0]}${area}</div><div class="svc-loc-state">${k.lines[i + 1] || ''}</div></div>`);
+    }
+    return `<div class="svc-kpi svc-kpi-locations"><div class="svc-loc-label">${k.label}</div><div class="svc-loc-grid">${locs.join('')}</div></div>`;
+  }
+
+  /* "lines" wale tile (jaise Project Locations) par kabhi map nahi dikhega */
+  const keys = k.lines
+    ? []
+    : (k.states || (STATE_MAPS[String(k.number).trim().toLowerCase()] && !k.noMap ? [String(k.number).trim().toLowerCase()] : []));
   const maps = keys.filter(x => STATE_MAPS[x]).map(mapTileHtml).join('');
 
+  /* lines: even index = city (bold), odd index = state (chhota, niche) */
   const main = k.lines
-    ? `<div class="svc-kpi-lines">${k.lines.map(line => `<div>${line}</div>`).join('')}</div>`
+    ? `<div class="svc-kpi-lines">${k.lines.map((line, i) => `<div class="${i % 2 ? 'svc-line-sub' : 'svc-line-main'}">${line}</div>`).join('')}</div>`
     : `<div class="svc-kpi-num">${countNumberHtml(k.number)}</div>`;
 
   const text = `<div class="svc-kpi-text">${main}<div class="svc-kpi-label">${k.label}</div></div>`;
@@ -132,8 +147,8 @@ function kpiTileHtml(k) {
 
 const IMAGE_VERSION = "2";
 const SERVICE_IMAGES = {
-  stormwater: "assets/StormWater Drainage.png", 
-  gis:"assets/GIS option 2.png"           
+  stormwater: "assets/StormWater Drainage.png",
+  gis:"assets/GIS option 2.png"
 };
 function imgPath(path) { return encodeURI(path) + "?v=" + IMAGE_VERSION; }
 
@@ -168,29 +183,32 @@ const SERVICES_DATA = [
       {
         title: "Water Treatment Infrastructure",
         text: "Technological design for major water treatment infrastructure.",
-        kpis: [{ number: "30", label: "Large-Scale WTPs" }]
+        kpis: [{ number: "30+", label: "Large-Scale WTPs" }]
       },
       {
         title: "Rural Water Security",
         text: "DPRs under the Jal Jeevan Mission across Assam and Karnataka.",
         kpis: [
-          { number: "3,000", label: "Rural Schemes" },
+          { number: "3,000+", label: "Rural Schemes" },
           { number: "₹4,000 Cr", label: "Portfolio Value" }
         ]
       },
       {
         title: "Project Management Consultancy",
-        text: "PMC for continuous 24×7 Drinking Water Supply in Tezpur & Sambalpur.", // TODO: original text was cut off - confirm full line
+        text: "PMC for continuous 24×7 Drinking Water Supply in Chennai,Tezpur & Sambalpur.",
         kpis: [
           { number: "24×7", label: "Drinking Water Supply" },
           {
             number: "Odisha · Assam · Tamil Nadu",
             label: "Project Locations",
-            states: ["odisha", "assam", "tamilnadu"],
+            noMap: true,
             lines: [
-              "Sambalpur – Odisha",
-              "Tezpur – Assam",
-              "Chennai-(Area X & XII) Tamil-Nadu"
+              "Chennai|(Area X & XII)",
+              "Tamil Nadu",
+              "Tezpur",
+              "Assam",
+              "Sambalpur",
+              "Odisha"
             ]
           }
         ]
@@ -206,7 +224,7 @@ const SERVICES_DATA = [
     id: "used-water",
     aliases: ["used-water-management", "sewerage", "wastewater"],
     title: "Used Water Management",
-    subtitle: "Sewerage, Wastewater Treatment and Reuse Solutions",
+    subtitle: "Sewerage, Used Water Treatment and Reuse Solutions",
     image: "assets/images/about/Used%20Water%20Mgmt.jpg",
     description: "Comprehensive engineering consultancy for sewerage systems, modern sewage treatment plants (STP), fecal sludge management, and treated water recycling infrastructure.",
     capabilities: [
@@ -218,12 +236,12 @@ const SERVICES_DATA = [
     programs: [
       {
         title: "Sewerage Infrastructure Engineering",
-        text: "DPRs for major cities such as Bhubaneswar, Cuttack,", // TODO: original text was cut off - confirm full line
+        text: "DPRs for major cities such as Bhubaneswar, Cuttack,Sambalpur and Baripada", // TODO: original text was cut off - confirm full line
         kpis: [{ number: "3,000+ km", label: "Network" }]
       },
       {
         title: "Large-Scale Execution & Advisory",
-        text: "PMC under the Japan International Cooperation Agency (JICA)-assisted Odisha Integrated Sanitation Improvement Project (OISIP), across Cuttack and Bhubaneswar.",
+        text: "PMC under JICA-assisted Odisha Integrated Sanitation Improvement Project (OISIP), across Cuttack and Bhubaneswar.",
         kpis: [
           { number: "1,250+ km", label: "Network" },
           { number: "3", label: "STPs" },
@@ -273,7 +291,7 @@ const SERVICES_DATA = [
         ]
       },
       {
-        title: "Project Management Consultancy for Flood Mitigation",
+        title: "Project Management Consultancy",
         text: "End-to-end PMC services for the Japan International Cooperation Agency (JICA) assisted drainage project in Cuttack.",
         tags: ["DPR", "Bidding", "Supervision", "Contract Management"],
         kpis: [
@@ -342,20 +360,17 @@ const SERVICES_DATA = [
       {
         title: "Waterfront & Green Space Development",
         text: "DPR & PMC services for the rejuvenation and beautification of water bodies, canal corridors and public green spaces.",
-        tags: ["Ponds", "Riverfronts", "Canals", "Parks"],
-        kpis: [{ number: "DPR & PMC", label: "Services" }]
+        tags: ["Ponds", "Riverfronts", "Canals", "Parks"]
       },
       {
         title: "Civic & Public Buildings",
         text: "Planning and PMC services for essential civic and public-use infrastructure.",
-        tags: ["Auditoriums", "Administrative Buildings", "City Centres", "Markets"],
-        kpis: [{ number: "Planning & PMC", label: "Services" }]
+        tags: ["Auditoriums", "Administrative Buildings", "City Centres", "Markets"]
       },
       {
         title: "Sports & Community Infrastructure",
         text: "DPR and PMC services for community, cultural and recreational facilities.",
-        tags: ["Town Halls", "Mini Stadiums", "Sports Complexes"],
-        kpis: [{ number: "DPR & PMC", label: "Services" }]
+        tags: ["Town Halls", "Mini Stadiums", "Sports Complexes"]
       }
     ],
     stats: []
@@ -418,27 +433,28 @@ const SERVICES_DATA = [
     ],
     programs: [
       {
-        title: "Highway & Bypass Planning",
-        text: "Feasibility studies and budgeting for bypass development at Bhawanipatna and Titlagarh.",
+        title: "Planning & Design",
+        text: "Technical Consultancy for the construction of a two-lane bypass road at Rairangpur,Odisha on the Ranchi–Vijayawada Corridor.",
         kpis: [
-          { number: "NH-26 & NH-59", label: "Highways" },
-          { number: "Odisha", label: "State", noMap: true }
+          { number: "NH-220", label: "Highway" },
+          { number: "2", label: "Lane Bypass Road" },
+          { number: "Rairangpur", label: "Location", noMap: true }
         ]
       },
       {
         title: "Road & Corridor Engineering",
-        text: "DPRs for a 4-lane roadway and the Digha-AIIMS Elevated Corridor.", // TODO: original text was cut off - confirm full line
+        text: "DPR for road construction from Digha-AIIMS Patli Path to Nehru Path and from Patel Chowk to West Side of Eco Park & East Side of Eco Park to Atal Path,Patna",
         kpis: [
-          { number: "4-Lane", label: "Roadway" },
+          { number: "4", label: "Lane Road" },
           { number: "Elevated", label: "Corridor" },
-          { number: "Bihar", label: "State" }
+          { number: "Bihar", label: "Location" }
         ]
       },
       {
         title: "Rural & Urban Road Development",
-        text: "DPR for road construction under the Rural Development Department, supporting improved regional connectivity.",
+        text: "DPR for road construction under the Rural Development Department, supporting improved regional connectivity at Jajpur",
         kpis: [
-          { number: "Jaraka, Jajpur", label: "Location" },
+          { number: "Jaraka", label: "Location" },
           { number: "Odisha", label: "State", noMap: true }
         ]
       }
@@ -479,7 +495,7 @@ const SERVICES_DATA = [
         text: "Integrated spatial portals combining consumer data, utility assets and automated query handling.",
         kpis: [
           { number: "Web GIS", label: "Portals" },
-          { number: "Consumer & Utility", label: "Data" }
+          { number: "Consumer & Utility Assets", label: "Data" }
         ]
       }
     ],
