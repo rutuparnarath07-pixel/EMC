@@ -364,6 +364,7 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Project Locations: city (bold) + state (niche, chhota) */
 .svc-kpi-lines div {
   font-size: 0.8rem;
   font-weight: 700;
@@ -371,12 +372,75 @@
   color: var(--navy-text);
 }
 
+.svc-kpi-lines .svc-line-sub {
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.svc-kpi-lines .svc-line-sub:last-child {
+  margin-bottom: 0;
+}
+
 .svc-kpi-label {
   margin-top: 1px;
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.4px;
+  color: var(--text-muted);
+}
+
+/* ---------- Project Locations block ---------- */
+.svc-kpi-locations {
+  flex: 1 1 100%;
+  margin-top: 8px;
+  padding-top: 10px;
+  border-top: 1px dashed #E5E7EB;
+}
+
+.svc-loc-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.svc-loc-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+
+.svc-loc-city {
+  white-space: nowrap;   /* Chennai (Area X & XII) ek hi line mein poora */
+}
+
+.svc-loc {
+  padding-left: 10px;
+  border-left: 2px solid var(--primary-green);
+}
+
+.svc-loc-city {
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--navy-text);
+}
+
+.svc-loc-area {
+  font-size: 0.74rem;
+  font-weight: 400;
+  color: var(--navy-text);
+}
+
+.svc-loc-state {
+  margin-top: 1px;
+  font-size: 0.7rem;
+  font-weight: 600;
   color: var(--text-muted);
 }
 
