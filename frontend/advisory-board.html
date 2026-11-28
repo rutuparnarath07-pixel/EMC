@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/advisory.css">
     <script src="js/i18n.js"></script>
     <link rel="stylesheet" href="css/responsive.css">
   </head>
@@ -21,13 +21,66 @@
     <header class="site-header">
       <div class="container header-container">
         <a href="index.html" class="brand-logo"><img
-            src="assets/logo/emclogo.png" alt="EMC Logo"></a>
+            src="assets/images/logo/emclogo.jpg" alt="EMC Logo"></a>
         <ul class="nav-menu">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link">About Us</a></li>
           <li><a href="our-services.html" class="nav-link">Services</a></li>
-          <li><a href="services.html" class="nav-link">Delivery
-              Experience</a></li>
+          <!-- DELIVERY EXPERIENCE MEGA MENU (3 x 3) -->
+          <li class="nav-item-has-mega">
+            <a href="services.html" class="nav-link">Delivery Experience ▾</a>
+            <div class="mega-menu-dropdown">
+              <div class="mega-menu-label">EMC 9 Core Sectors</div>
+              <div class="mega-menu-grid">
+
+                <a href="services.html" class="mega-menu-item">
+                  <div class="mega-menu-icon">💧</div>
+                  <div><div class="mega-menu-title">Drinking Water Supply</div></div>
+                </a>
+
+                <a href="services.html" class="mega-menu-item">
+                  <div class="mega-menu-icon">♻️</div>
+                  <div><div class="mega-menu-title">Used Water Management</div></div>
+                </a>
+
+                <a href="services.html" class="mega-menu-item">
+                  <div class="mega-menu-icon">🌧️</div>
+                  <div><div class="mega-menu-title">Stormwater &amp; Flood Management</div></div>
+                </a>
+
+                <a href="services.html" class="mega-menu-item">
+                  <div class="mega-menu-icon">🗺️</div>
+                  <div><div class="mega-menu-title">GIS &amp; Spatial Intelligence</div></div>
+                </a>
+
+                <a href="services.html" class="mega-menu-item">
+                  <div class="mega-menu-icon">🏙️</div>
+                  <div><div class="mega-menu-title">Urban Planning</div></div>
+                </a>
+
+                <a href="services.html" class="mega-menu-item">
+                  <div class="mega-menu-icon">🏛️</div>
+                  <div><div class="mega-menu-title">Urban Development &amp; Civic Infrastructure</div></div>
+                </a>
+
+                <a href="services.html" class="mega-menu-item">
+                  <div class="mega-menu-icon">🛣️</div>
+                  <div><div class="mega-menu-title">Transportation</div></div>
+                </a>
+
+                <a href="services.html" class="mega-menu-item">
+                  <div class="mega-menu-icon">💻</div>
+                  <div><div class="mega-menu-title">Digital Solutions</div></div>
+                </a>
+
+                <a href="services.html" class="mega-menu-item">
+                  <div class="mega-menu-icon">📡</div>
+                  <div><div class="mega-menu-title">Telecommunications</div></div>
+                </a>
+
+              </div>
+            </div>
+          </li>
           <!-- <li><a href="projects.html" class="nav-link">Projects</a></li>
         <li><a href="insights.html" class="nav-link">Insights</a></li> -->
           <li class="nav-item-has-dropdown">
@@ -113,7 +166,7 @@
         →</a>
     </div>
 
-    <section id="main-content" tabindex="-1" class="page-hero">
+    <section id="main-content" tabindex="-1" class="adv-hero">
       <div class="container">
         <div class="breadcrumbs">
           <a href="index.html">Home</a>
@@ -122,12 +175,11 @@
           <span>›</span>
           <span>Advisory Board</span>
         </div>
-        <div class="page-hero-grid">
+        <div class="adv-hero-grid">
           <div>
             <!-- <div class="section-badge">OUR ADVISORS</div> -->
-            <h1 class="page-hero-title">A Legacy <span>of Guidance</span></h1>
-            <p
-              style="color:#ffff; max-width:540px; line-height:1.65; font: size 0.95rem;">
+            <h1 class="adv-hero-title">A Legacy of <span>Guidance</span></h1>
+            <p class="adv-hero-text">
               Our distinguished advisors bring diverse expertise and extensive
               experience, offering strategic insights and direction to
               strengthen organizational capabilities, drive sustainable growth
@@ -140,17 +192,16 @@
 
     <section class="container">
 
-      <div class="advisors-grid"
-        style="display:grid; grid-template-columns:repeat(5, 1fr); gap:20px;">
-        <div class="advisor-card">
-          <div class="advisor-photo-wrap">
-            <img src="assets/images/sanjeev_das.png" alt="Sanjeev Kumar Das"
-              class="advisor-photo">
+      <div class="adv-grid">
+        <div class="adv-card">
+          <div class="adv-photo-wrap">
+            <img src="assets/images/Leadership Photos/Sanjeev Das.png" alt="Sanjeev Kumar Das"
+              class="adv-photo">
           </div>
-          <h3 class="advisor-name">Sanjeev Kumar Das</h3>
-          <div class="advisor-role">Mentor-in-Chief, Water Supply & Sewerage
+          <h3 class="adv-name">Sanjeev Kumar Das</h3>
+          <div class="adv-role">Mentor-in-Chief, Water Supply & Sewerage
             Management</div>
-          <p class="advisor-bio">Public Health Engineering
+          <p class="adv-bio">Public Health Engineering
             specialist with 35+ years in
             water supply, wastewater
             and sanitation. Former
@@ -163,15 +214,15 @@
             management across India.</p>
         </div>
 
-        <div class="advisor-card">
-          <div class="advisor-photo-wrap">
-            <img src="assets/images/ryuji_otagoru.png" alt="Ryuji Otaguro"
-              class="advisor-photo">
+        <div class="adv-card">
+          <div class="adv-photo-wrap">
+            <img src="assets/images/Leadership Photos/Ryuji Otagoru.png" alt="Ryuji Otaguro"
+              class="adv-photo">
           </div>
-          <h3 class="advisor-name">Ryuji Otaguro</h3>
-          <div class="advisor-role">Advisor, International Infrastructure &
+          <h3 class="adv-name">Ryuji Otaguro</h3>
+          <div class="adv-role">Advisor, International Infrastructure &
             Development</div>
-          <p class="advisor-bio">International
+          <p class="adv-bio">International
             infrastructure specialist with 35+ years of global
             experience in World Bank, JICA and ADBfunded
             infrastructure, engineering and procurement
@@ -181,15 +232,15 @@
             infrastructure.</p>
         </div>
 
-        <div class="advisor-card">
-          <div class="advisor-photo-wrap">
-            <img src="assets/images/gopesh_shrivastava.png"
-              alt="Gopesh Shrivastava" class="advisor-photo">
+        <div class="adv-card">
+          <div class="adv-photo-wrap">
+            <img src="assets/images/Leadership Photos/Gopesh Shrivastava.png"
+              alt="Gopesh Shrivastava" class="adv-photo">
           </div>
-          <h3 class="advisor-name">Gopesh Shrivastava</h3>
-          <div class="advisor-role">Advisor, Business Development & Client
+          <h3 class="adv-name">Gopesh Shrivastava</h3>
+          <div class="adv-role">Advisor, Business Development & Client
             Relations</div>
-          <p class="advisor-bio">Civil Engineer with 35+
+          <p class="adv-bio">Civil Engineer with 35+
             years of experience,including 20+ years with
             PHED, Madhya Pradesh,and 15+ years in infrastructure consulting.
             Expertise in urban water,sewerage, drainage, flood
@@ -199,14 +250,14 @@
             development & client relations.</p>
         </div>
 
-        <div class="advisor-card">
-          <div class="advisor-photo-wrap">
-            <img src="assets/images/sachidananda_satapathy.png"
-              alt="Sachidananda Satapathy" class="advisor-photo">
+        <div class="adv-card">
+          <div class="adv-photo-wrap">
+            <img src="assets/images/Leadership Photos/Sachidananda Satapathy.png"
+              alt="Sachidananda Satapathy" class="adv-photo">
           </div>
-          <h3 class="advisor-name">Sachidananda Satapathy</h3>
-          <div class="advisor-role">Advisor, Environment & Climate Change</div>
-          <p class="advisor-bio">Environmental Scientist
+          <h3 class="adv-name">Sachidananda Satapathy</h3>
+          <div class="adv-role">Advisor, Environment & Climate Change</div>
+          <p class="adv-bio">Environmental Scientist
             with 40+ years of leadership in environmental
             management, climate policy and sustainable development. Contributed
             to India's climate policy, ozone protection and international
@@ -216,15 +267,15 @@
             climate action.</p>
         </div>
 
-        <div class="advisor-card">
-          <div class="advisor-photo-wrap">
-            <img src="assets/images/basanta_kumar_parida.png"
-              alt="Basanta Kumar Parida" class="advisor-photo">
+        <div class="adv-card">
+          <div class="adv-photo-wrap">
+            <img src="assets/images/Leadership Photos/Basanta Kumar Parida.png"
+              alt="Basanta Kumar Parida" class="adv-photo">
           </div>
-          <h3 class="advisor-name">Basanta Kumar Parida</h3>
-          <div class="advisor-role">Advisor, Water, Sanitation & Urban
+          <h3 class="adv-name">Basanta Kumar Parida</h3>
+          <div class="adv-role">Advisor, Water, Sanitation & Urban
             Infrastructure</div>
-          <p class="advisor-bio">Distinguished Civil Engineer
+          <p class="adv-bio">Distinguished Civil Engineer
             and former Chief Engineer,Government of Odisha, with
             decades of leadership in urban infrastructure.
             Recognized for contributions to water supply, sanitation and
@@ -240,7 +291,7 @@
         <div class="footer-main">
           <div class="footer-brand footer-brand-card">
             <div class="footer-card-header">
-              <img src="assets/logo/emclogo.png" alt="EMC Logo"
+              <img src="assets/images/logo/emclogo.jpg" alt="EMC Logo"
                 class="footer-card-logo">
             </div>
             <div class="footer-card-body">
